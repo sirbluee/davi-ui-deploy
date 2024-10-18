@@ -30,7 +30,7 @@ To simplify data management by enabling users to effortlessly import, transform,
 
 ## UI design
 
-- [![Static Badge](https://img.shields.io/badge/Figma-2C2D34?style=for-the-badge&logo=figma&logoColor=fff&color=%232C2D34)](https://www.figma.com/design/crMDtSSVv5vX7sIZc8jCWN/Team-Project-Check-Me?node-id=205-108&t=fR3Ai4jI02tEYQvX-0)
+- [![Static Badge](https://img.shields.io/badge/Figma-2C2D34?style=for-the-badge&logo=figma&logoColor=fff&color=%232C2D34)](https://www.figma.com/design/64q2H61k46FuYCLEfdiZC9/Data-catalog-flow?node-id=121-5213&t=pMJuN04UmFjGUyOQ-1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -52,28 +52,6 @@ This section we lists all library and framework that make this project
 .
 ├── apps
 │   ├── backend
-│   │   ├── api-sample
-│   │   │   ├── build-script.js
-│   │   │   ├── Dockerfile.dev
-│   │   │   ├── Dockerfile.local
-│   │   │   ├── ecosystem.config.js
-│   │   │   ├── ecosystem.local.config.js
-│   │   │   ├── nodemon.json
-│   │   │   ├── package.json
-│   │   │   ├── src
-│   │   │   │   ├── app.ts
-│   │   │   │   ├── configs
-│   │   │   │   ├── config.ts
-│   │   │   │   ├── controllers
-│   │   │   │   │   └── product.controller.ts
-│   │   │   │   ├── docs
-│   │   │   │   │   └── swagger.json
-│   │   │   │   ├── routes
-│   │   │   │   │   └── v1
-│   │   │   │   │       └── routes.ts
-│   │   │   │   └── server.ts
-│   │   │   ├── tsconfig.json
-│   │   │   └── tsoa.json
 │   │   ├── auth-service
 │   │   │   ├── build-script.js
 │   │   │   ├── Dockerfile.dev
