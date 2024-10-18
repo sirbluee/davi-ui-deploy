@@ -37,8 +37,8 @@ To simplify data management by enabling users to effortlessly import, transform,
 ### Built With
 
 This section we lists all library and framework that make this project
-
-- [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+- [![Static Badge](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+- [![Static Badge](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 - [![Static Badge](https://img.shields.io/badge/Node.js-499442?style=for-the-badge&logo=node.js&logoColor=fff&color=499442)](https://nodejs.org/en)
 - [![Static Badge](https://img.shields.io/badge/Tyscript-3178C6?style=for-the-badge&logo=typescript&logoColor=fff&color=3178C6)](https://www.typescriptlang.org/)
 - [![Static Badge](https://img.shields.io/badge/Express.js-000?style=for-the-badge&logo=express&logoColor=fff&color=000)](https://expressjs.com/)
@@ -211,13 +211,13 @@ Open your terminal and run the following command to clone the project repository
 1. Clone the Repository:
 
 ```sh
-git clone https://github.com/easycode002/data-catalog.git
+git clone https://github.com/datacatalog2024/davi.git
 ```
 
 2. Navigate to the Project Directory:
 
 ```sh
-cd data-catalog
+cd davi
 ```
 
 3. Install Dependencies:
@@ -244,13 +244,13 @@ Open your terminal and run the following command to clone the project repository
 1. Clone the Repository:
 
 ```sh
-git clone https://github.com/easycode002/data-catalog.git
+git clone https://github.com/datacatalog2024/davi.git
 ```
 
 2. Navigate to the Project Directory:
 
 ```sh
-cd data-catalog
+cd davi
 ```
 
 3. Install Dependencies:
