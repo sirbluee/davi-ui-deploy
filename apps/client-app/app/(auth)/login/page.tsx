@@ -139,7 +139,7 @@ export default function LoginPage() {
       <div className="hidden sm:block w-1/2 lg:w-1/2 relative">
         <div className="h-full w-full flex items-center justify-center bg-blue-500 rounded-l-3xl">
           <Image
-            src="/images/auth-images/signup.png"
+            src="/images/auth-images/login.png"
             alt="Login"
             width={500}
             height={500}
