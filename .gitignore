@@ -2,6 +2,7 @@
 yarn.lock
 .npmrc
 .yarnrc.yml
+_TOKEN
 # Logs
 logs
 *.log
