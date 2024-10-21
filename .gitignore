@@ -2,6 +2,7 @@
 yarn.lock
 .npmrc
 .yarnrc.yml
+_TOKEN
 # Logs
 logs
 *.log
@@ -10,7 +11,7 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
-
+# Just testing
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
