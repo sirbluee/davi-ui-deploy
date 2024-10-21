@@ -1,8 +1,12 @@
+import Button from "./components/atoms/Button";
+import Input from "./components/atoms/Input";
 function App() {
   return (
-    <>
-      <h1 className="text-red-500">Hello, From ui-components</h1>
-    </>
+    <div>
+      <h1>Helo</h1>
+      <Button />
+      <Input />
+    </div>
   );
 }
 

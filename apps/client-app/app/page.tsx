@@ -1,4 +1,4 @@
-import { Input } from "ui-components";
+import { Button } from "ms-ui-components";
 export default function Home() {
   return (
     <>
@@ -6,7 +6,7 @@ export default function Home() {
         <h1 className="font-bold text-xl underline text-red-700 mb-4">
           Client-App
         </h1>
-        <Input />
+        <Button/>
       </div>
     </>
   );
