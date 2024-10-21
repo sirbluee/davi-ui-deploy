@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className=""
+        className="h-screen flex flex-col justify-between"
       >
         {children}
       </body>
