@@ -26,7 +26,6 @@ export const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
     <div className="relative p-6 bg-white rounded-xl shadow-lg w-full sm:w-72 h-80 mx-auto overflow-hidden transition-transform transform hover:scale-105">
       {/* Background Container */}
       <div className="absolute inset-0 bottom-0 bg-gray-400 h-[80%] rounded-b-[50%] opacity-50 z-0"></div>
-
       <div className="space-y-12">
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center">
