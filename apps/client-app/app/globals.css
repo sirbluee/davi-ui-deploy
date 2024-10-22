@@ -2,10 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    font-family: var(--font-inter);
-}
-
 body {
-    background-color: white;
+    font-family: (
+        var(--font-inter)
+    );
 }
