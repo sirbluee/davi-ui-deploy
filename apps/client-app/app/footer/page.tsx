@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-4 gap-24">
         <div className="text-center lg:text-left">
-          <h2 className="text-xl font-bold mb-2 flex justify-center">
+          <h2 className="flex justify-center md:justify-start text-xl font-bold mb-2">
             <Image
               src={Logo}
               alt="Description of the logo"
@@ -34,6 +34,7 @@ const Footer: React.FC = () => {
               height={36}
             />
           </h2>
+
           <p className="text-sm  mb-4 pt-6 pb-6">
             DAVI enables businesses to integrate, analyze, and visualize data
             for smarter decision-making.
