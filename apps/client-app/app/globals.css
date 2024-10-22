@@ -2,28 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.scroll-parallax{
+.scroll-parallax {
     background-image: url('../public/images/home/paralax.png');
-    background-position:top ;
+    background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-clip: border-box;
-    background-size: 100% !important;
-    position: relative !important;
+    background-size: cover;
+    position: relative;
 }
-.bg-memey{
-    background: rgba(68, 75, 210, 0.2) !important;
+.bg-memey {
+    /* Optional semi-transparent overlay */
+    /* background: rgba(68, 75, 210, 0.2); */
+    backdrop-filter: blur(5px) !important;
 }
 
-.scroll-parallax11{
-    background-image: url('../public/images/home/paralax.png');
-    /* background-position:top ;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    background-size: 100% !important;
-    position: relative !important; */
-}
 body {
     font-family: (
         var(--font-inter)
