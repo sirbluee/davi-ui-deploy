@@ -1,6 +1,5 @@
 import Image from "next/image";
 import BGImage from "@/public/images/contact/images/background2.png";
-import NavbarComponent from "../components/NavbarComponent";
 // import ilustration from "@/public/images/contact/images/image 20.svg";
 import scrollIcon from "@/public/images/contact/images/scroll.svg";
 import messageIcon from "@/public/images/contact/images/message-2.svg";
@@ -15,12 +14,6 @@ export default function ContactPage() {
           <div className="absolute w-full h-[535px]">
             <Image className="w-full h-[535px]" src={BGImage} alt=""></Image>
           </div>
-
-          {/* navbar or header */}
-          <nav className=" relative w-full">
-            <NavbarComponent />
-          </nav>
-
           {/* text */}
           <div className="flex flex-col justify-center items-center relative mt-[100px] w-full">
             <span className="text-center">
