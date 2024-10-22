@@ -19,7 +19,8 @@ export default function RootLayout({
       <body
         className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}
       >
-        <header>
+        {/* Navbar */}
+        <header className="absolute w-full z-50">
           <NavbarComponent />
         </header>
         {children}

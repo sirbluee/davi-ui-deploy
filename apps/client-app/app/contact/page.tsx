@@ -8,7 +8,7 @@ import ContactForm from "./components/form";
 export default function ContactPage() {
   return (
     <>
-      <div className=" w-full  ">
+      <div className="w-full">
         <div>
           {/* Background image */}
           <div className="absolute w-full h-[535px]">
