@@ -8,6 +8,7 @@ const config: Config = {
     // Issue
     "../../packages/ui-components/src/**/*.{js,ts,jsx,tsx,mdx}",
     // "../../node_modules/ms-ui-components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     extend: {
