@@ -14,7 +14,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   alt,
 }) => {
   return (
-    <div className="flex items-center p-4 transition-transform transform hover:scale-105">
+    <div className="flex flex-col sm:flex-row items-center transition-transform transform hover:scale-105">
       {/* Icon Section */}
       <div className="flex-shrink-0 w-16 h-16 overflow-hidden rounded-full border-2 border-gray-300 transition-all duration-300 hover:border-blue-500">
         <Image
@@ -27,7 +27,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       </div>
 
       {/* Content Section */}
-      <div className="ml-6">
+      <div className="text-center sm:text-left sm:ml-6 mt-4 sm:mt-0">
         <h3 className="font-semibold text-lg transition-colors duration-300 hover:text-blue-600">
           {title}
         </h3>
