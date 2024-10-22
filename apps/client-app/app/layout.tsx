@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,10 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className="h-screen flex flex-col justify-between"
-      >
+      <body className="h-screen flex flex-col justify-between">
         {children}
+        {/* <footer>
+          <Link href="/footer"></Link>
+        </footer> */}
       </body>
     </html>
   );
