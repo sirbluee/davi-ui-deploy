@@ -1,32 +1,70 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import ilustration from "@/public/images/contact/images/image 20.svg";
 import Image from "next/image";
 
 export default function ContactForm() {
+  const [name, setName] = useState("");
+  const [projectDetails, setProjectDetails] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validate email before submitting
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    }
+
+    setEmailError(""); // Clear any previous errors if email is valid
+
+    console.log(
+      `Name: ${name}\n email:${email}\n ProjectDetail: ${projectDetails} `
+    );
+    alert(`Name: ${name}\n email:${email}\n ProjectDetail: ${projectDetails} `);
+  };
+
   return (
     <div className="flex justify-center items-center mt-16 ">
-      <div className="w-4/5  relative bg-[#F3F8FF] mx-[150px] rounded-2xl flex overflow-hidden ">
+      <div className="w-4/5 relative bg-[#F3F8FF] mx-[150px] rounded-2xl flex overflow-hidden ">
         <div className="w-1/2 p-16">
           <header className="font-bold text-4xl text-[#3F4655]">
             Contact us
           </header>
-          <form action="" className=" flex flex-col pt-16 space-y-14">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col pt-16 space-y-14"
+          >
             {/* name */}
             <div className="flex flex-col">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="border-b border-black outline-none bg-transparent "
+                className="border-b border-black outline-none bg-transparent"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
 
-            {/* phone number */}
+            {/* email */}
             <div className="flex flex-col">
               <input
                 type="text"
-                placeholder="Phone Number"
+                placeholder="Your Email"
                 className="border-b border-black bg-transparent outline-none"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
+              {emailError && (
+                <span className="text-red-500 text-sm mt-2">{emailError}</span>
+              )}
             </div>
 
             {/* tell us about project */}
@@ -40,17 +78,16 @@ export default function ContactForm() {
               <input
                 type="text"
                 className="border-b border-black bg-transparent outline-none mt-10"
+                value={projectDetails}
+                onChange={(e) => setProjectDetails(e.target.value)}
               />
             </div>
 
-            {/* agree */}
-            <div className="flex mt-14">
-              <input type="checkbox" name="" id="" className="w-5 h-5" />
-              <p className="ml-10">I agree to the terms of this</p>
-            </div>
-
             {/* send message */}
-            <button className="mt-12 bg-[#443DFF] text-white border w-[150px] p-3 rounded-lg font-bold">
+            <button
+              type="submit"
+              className="mt-12 bg-[#443DFF] text-white border w-[150px] p-3 rounded-lg font-bold"
+            >
               Send Message
             </button>
           </form>
