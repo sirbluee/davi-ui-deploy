@@ -8,8 +8,13 @@ export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
+<<<<<<< HEAD
+    <nav className="px-4 py-6">
+      <div className="container w-auto mx-32 flex justify-between items-center">
+=======
     <nav className="px-4 py-4 text-white">
       <div className="container mx-auto flex justify-between items-center px-4 lg:px-16 xl:px-0 xl:max-w-[calc(100%-400px)]">
+>>>>>>> 7c9356266955a91b40147dda94588f90f854bc6b
         <div className="flex items-center space-x-4">
           {/* Logo */}
           <div className="text-xl font-bold">
@@ -62,6 +67,10 @@ export default function NavbarComponent() {
           >
             Sign Up
           </Link>
+<<<<<<< HEAD
+          <Link href="/get-started" className="ml-8">
+            <span className="bg-[#443DFF] text-white text-base font-bold p-3 rounded-lg hover:bg-blue-700">
+=======
           <Link href="/get-started">
             <span className="bg-blue-600 text-white text-base font-bold px-4 py-2 rounded hover:bg-blue-700">
               Get Started
@@ -164,6 +173,7 @@ export default function NavbarComponent() {
           </Link>
           <Link href="/get-started" onClick={() => setIsMenuOpen(false)}>
             <span className="bg-blue-600 text-white text-base font-bold py-2 px-4 rounded-lg hover:bg-blue-700">
+>>>>>>> 7c9356266955a91b40147dda94588f90f854bc6b
               Get Started
             </span>
           </Link>
