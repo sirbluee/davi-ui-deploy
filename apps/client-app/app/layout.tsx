@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "./footer/page";
 import { inter } from "./fonts";
 
 export const metadata: Metadata = {
@@ -16,6 +17,9 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}>
         {children}
+        <footer>
+       <Footer/>
+        </footer>
       </body>
     </html>
   );
