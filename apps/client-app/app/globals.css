@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scroll-parallax{
+    background-image: url('../public/images/home/paralax.png');
+    background-position:top ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: 100% !important;
+    position: relative !important;
+}
+.bg-memey{
+    background: rgba(68, 75, 210, 0.2) !important;
+}
+
+.scroll-parallax11{
+    background-image: url('../public/images/home/paralax.png');
+    /* background-position:top ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: 100% !important;
+    position: relative !important; */
+}
+body {
+    font-family: (
+        var(--font-inter)
+    );
+}

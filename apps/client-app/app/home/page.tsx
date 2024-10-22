@@ -1,4 +1,3 @@
-import NavbarComponent from "@/app/components/NavbarComponent";
 import HeroSection from "@/app/home/components/HeroSection";
 import FeaturesSection from "@/app/home/components/FeatureSection";
 import SolutionSection from "@/app/home/components/SolutionSection";
@@ -10,11 +9,6 @@ import CTASection from "@/app/home/components/CTASection";
 export default function HomePage() {
   return (
     <>
-      {/* Navbar */}
-      <div className="absolute w-full z-50">
-        <NavbarComponent />
-      </div>
-
       {/* Hero Section */}
       <HeroSection />
 
