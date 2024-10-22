@@ -16,9 +16,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="h-screen flex flex-col justify-between">
         {children}
-        {/* <footer>
+        <footer>
           <Link href="/footer"></Link>
-        </footer> */}
+        </footer>
       </body>
     </html>
   );
