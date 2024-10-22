@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import SideIntergrate from "@/public/images/home/sideIntergrateSection.png";
 import ScanImg from "@/public/images/home/span.png";
+import Marquee, { MarqueeDemo } from '@/app/home/components/marquee'
 
 export default function IntergrationSection() {
   return (
@@ -11,13 +12,16 @@ export default function IntergrationSection() {
           {/* Left Side - Image List */}
           <div className="w-full md:w-[40%] flex justify-center">
             <div className="relative">
-              <Image
+              {/* <Image
                 src={SideIntergrate}
                 alt="ETLImageList"
                 className="rounded-lg"
                 width={400}
                 height={600}
-              />
+              /> */}
+              {/* <h1>hello</h1> */}
+              {/* <Marquee/> */}
+              <MarqueeDemo/>
             </div>
           </div>
 
