@@ -1,3 +1,4 @@
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { FaFacebookF, FaLinkedinIn, FaGithub } from "react-icons/fa";
 
@@ -8,9 +9,9 @@ interface SocialLinks {
   github: string;
 }
 
-// Define the TeamMember interface to match your data structure
+// Update the TeamMember interface to support both string and StaticImageData for the image
 interface TeamMember {
-  id: number; // id is a number
+  id: number;
   name: string;
   role: string;
   image: string | StaticImageData;
@@ -18,37 +19,36 @@ interface TeamMember {
 }
 
 interface TeamMemberCardProps {
-  member: TeamMember; // Use the defined interface
+  member: TeamMember;
 }
 
-export const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
+export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
   return (
-    <div className="relative p-6 bg-white rounded-xl shadow-lg w-full sm:w-64 h-72 mx-auto overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl">
+    <div className="relative p-2 sm:p-6 bg-gray-100 rounded-lg shadow-md w-40 sm:w-56 h-52 sm:h-64 mx-auto overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg group">
       {/* Background Container */}
-      <div className="absolute inset-0 bottom-0 bg-gray-400 h-[80%] rounded-b-[50%] opacity-50 z-0"></div>
-      <div className="space-y-5">
-        {/* Content */}
-        <div className="relative z-10 flex flex-col items-center">
-          {/* Profile Image */}
-          <div className="w-28 h-28 mb-4 rounded-full overflow-hidden border-4 border-white shadow-lg transition-transform transform hover:scale-125">
-            <Image
-              src={member.image}
-              alt={`${member.name} - ${member.role}`} // Improved alt text for accessibility
-              width={120}
-              height={120}
-              className="object-cover w-full h-full"
-            />
-          </div>
+      <div className="absolute inset-0 bottom-0 bg-gray-200 h-[80%] rounded-b-full opacity-50 z-0"></div>
+      <div className="relative pt-2 z-10 flex flex-col items-center space-y-4">
+        {/* Profile Image */}
+        <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg transform transition-transform duration-300 hover:scale-110 sm:hover:scale-125 group-hover:border-blue-500">
+          <Image
+            src={member.image}
+            alt={`${member.name} - ${member.role}`}
+            width={96}
+            height={96}
+            className="object-cover w-full h-full"
+          />
+        </div>
 
-          {/* Name and Role */}
-          <h2 className="text-lg font-bold text-gray-800 mb-1 text-center">
+        {/* Name and Role */}
+        <div className="text-center">
+          <h2 className="text-sm sm:text-lg font-semibold text-gray-800">
             {member.name}
           </h2>
-          <p className="text-gray-500 mb-4 text-center">{member.role}</p>
+          <p className="text-xs sm:text-sm text-">{member.role}</p>
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex justify-center space-x-4 mt-6 relative z-10">
+        <div className="flex justify-center space-x-3 mt-3">
           <a
             href={member.socialLinks.facebook}
             className="text-blue-600 hover:text-blue-800 transition-colors"
@@ -56,7 +56,7 @@ export const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
             rel="noopener noreferrer"
             aria-label={`${member.name}'s Facebook`}
           >
-            <FaFacebookF size={25} />
+            <FaFacebookF size={20} />
           </a>
           <a
             href={member.socialLinks.linkedin}
@@ -65,7 +65,7 @@ export const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
             rel="noopener noreferrer"
             aria-label={`${member.name}'s LinkedIn`}
           >
-            <FaLinkedinIn size={25} />
+            <FaLinkedinIn size={20} />
           </a>
           <a
             href={member.socialLinks.github}
@@ -74,7 +74,7 @@ export const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
             rel="noopener noreferrer"
             aria-label={`${member.name}'s GitHub`}
           >
-            <FaGithub size={25} />
+            <FaGithub size={20} />
           </a>
         </div>
       </div>

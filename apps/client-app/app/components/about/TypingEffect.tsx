@@ -23,7 +23,7 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ text, speed = 50 }) => {
   }, [text, speed]);
 
   return (
-    <p className="text-xl font-light text-gray-600 text-center lg:text-left transition-colors duration-100 hover:text-black">
+    <p className="text-2xl font-bold mb-4 text-center lg:text-left">
       {displayedText}
     </p>
   );
