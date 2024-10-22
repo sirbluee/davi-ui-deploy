@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "ms-ui-components":"1.0.0",
+=======
+>>>>>>> 7c9356266955a91b40147dda94588f90f854bc6b
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+<<<<<<< HEAD
     "ms-ui-components":"*",
+=======
+>>>>>>> 7c9356266955a91b40147dda94588f90f854bc6b
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -23,6 +29,11 @@
     "eslint-config-next": "14.2.14",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
+<<<<<<< HEAD
     "typescript": "^5"
+=======
+    "typescript": "^5",
+    "ui-components": "*"
+>>>>>>> 7c9356266955a91b40147dda94588f90f854bc6b
   }
 }
