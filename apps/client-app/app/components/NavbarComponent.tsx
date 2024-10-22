@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function NavbarComponent() {
   return (
-    <nav className="p-4">
-      <div className="container w-auto mx-32 flex justify-between items-center">
+    <nav className="bg-black p-4">
+      <div className="container w-auto mx-36 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           {/* Logo */}
           <div className="text-white text-xl font-bold">
