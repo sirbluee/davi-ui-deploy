@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function NavbarComponent() {
   return (
-    <nav className="bg-black p-4">
-      <div className="container w-auto mx-36 flex justify-between items-center">
+    <nav className="px-4 py-6">
+      <div className="container w-auto mx-32 flex justify-between items-center">
         <div className="flex items-center space-x-4">
           {/* Logo */}
           <div className="text-white text-xl font-bold">
@@ -58,8 +58,8 @@ export default function NavbarComponent() {
           >
             Sign Up
           </Link>
-          <Link href="/get-started" className="ml-5">
-            <span className="bg-[#443DFF] text-white text-base font-bold p-3 rounded hover:bg-blue-700">
+          <Link href="/get-started" className="ml-8">
+            <span className="bg-[#443DFF] text-white text-base font-bold p-3 rounded-lg hover:bg-blue-700">
               Get Started
             </span>
           </Link>
