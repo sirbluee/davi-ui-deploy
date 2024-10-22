@@ -1,12 +1,12 @@
-import Button from "./components/atoms/Button";
-import Input from "./components/atoms/Input";
+import { InputTest } from "./components/atoms/Input";
+
 function App() {
   return (
-    <div>
-      <h1>Helo</h1>
-      <Button />
-      <Input />
-    </div>
+    <>
+      <h1 className="font-bold text-5xl underline text-cyan-700">Sad Storybook</h1>
+      <p className="py-2 text-red-500">Just UI-COMPONENENT</p>
+      <InputTest/>
+    </>
   );
 }
 
