@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "./components/FooterComponent";
 import { inter } from "./fonts";
+import NavbarComponent from "./components/NavbarComponent";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,10 +16,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}>
+      <body
+        className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}
+      >
+        <header>
+          <NavbarComponent />
+        </header>
         {children}
         <footer>
-       <Footer/>
+          <Footer />
         </footer>
       </body>
     </html>

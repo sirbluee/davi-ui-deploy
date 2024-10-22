@@ -12,8 +12,8 @@ import Location from "@/public/images/footer/location_icon.png";
 
 const Footer: React.FC = () => {
   return (
-    <footer
-      className="bg-[#131111] text-white w-full   py-12 "
+    <div
+      className="bg-[#131111] text-white w-full py-12 "
       style={{
         backgroundImage: `url('/images/footer/bg-footer.png')`,
         backgroundRepeat: "no-repeat",
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
       <div className="text-center mt-10 text-sm">
         <p>Copyright © 2024 DAVI. All rights reserved.</p>
       </div>
-    </footer>
+    </div>
   );
 };
 
