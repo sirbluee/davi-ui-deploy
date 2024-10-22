@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Pattern from "@/public/images/home/Pattern.png";
 
 // Interface for the service data
 interface Service {
@@ -60,7 +61,7 @@ export default function ServiceSection() {
     <section className="py-12 bg-white">
       <div className="container mx-auto px-6 sm:px-8 lg:px-36 text-center mb-10 relative">
         <Image
-          src="/images/home/Pattern.png"
+          src={Pattern}
           alt="pattern"
           width={80}
           height={80}
@@ -92,7 +93,7 @@ export default function ServiceSection() {
           ))}
         </div>
         <Image
-          src="/images/home/Pattern.png"
+          src={Pattern}
           alt="pattern"
           width={80}
           height={80}
