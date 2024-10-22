@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri";
 
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,7 @@ export default function SignUpPage() {
   const [cpassword, setCPassword] = useState("");
   const [username, setUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -24,6 +26,10 @@ export default function SignUpPage() {
     console.log("Signing up with Google");
   };
 
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
   return (
     <div className="min-h-screen flex">
       {/* Left Section - Form */}
@@ -34,6 +40,7 @@ export default function SignUpPage() {
             Enter the details to create your account
           </p>
           <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* usernaem */}
             <div>
               <label
                 htmlFor="username"
@@ -55,6 +62,7 @@ export default function SignUpPage() {
                 />
               </div>
             </div>
+            {/* email */}
             <div>
               <label
                 htmlFor="email"
@@ -76,6 +84,7 @@ export default function SignUpPage() {
                 />
               </div>
             </div>
+            {/* password  */}
             <div>
               <label
                 htmlFor="password"
@@ -83,20 +92,30 @@ export default function SignUpPage() {
               >
                 Password
               </label>
-              <div className="mt-1">
+              <div className="mt-1 relative">
                 <input
                   placeholder="Enter Password"
                   id="password"
                   name="password"
-                  type="password"
+                  type={isPasswordVisible ? "text" : "password"}
                   autoComplete="new-password"
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                {/* Eye button */}
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                >
+                  {isPasswordVisible ? <RiEyeCloseLine /> : <RiEyeCloseFill />}
+                </button>
               </div>
             </div>
+
+            {/* comfirm password */}
             <div>
               <label
                 htmlFor="cpassword"
@@ -104,20 +123,29 @@ export default function SignUpPage() {
               >
                 Confirm Password
               </label>
-              <div className="mt-1">
+              <div className="mt-1 relative">
                 <input
                   placeholder="Confirm Password"
                   id="cpassword"
                   name="cpassword"
-                  type="password"
+                  type={isPasswordVisible ? "text" : "password"}
                   autoComplete="new-password"
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   value={cpassword}
                   onChange={(e) => setCPassword(e.target.value)}
                 />
+                {/* Eye button */}
+                <button
+                  type="button"
+                  onClick={togglePasswordVisibility}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
+                >
+                  {isPasswordVisible ? <RiEyeCloseLine /> : <RiEyeCloseFill />}
+                </button>
               </div>
             </div>
+
             <div>
               <button
                 type="submit"

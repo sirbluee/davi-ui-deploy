@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { RiEyeCloseLine } from "react-icons/ri";
+import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -78,30 +78,13 @@ export default function LoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                {/* eyes button */}
                 <button
                   type="button"
                   onClick={togglePasswordVisibility}
                   className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-gray-600"
                 >
-                  {isPasswordVisible ? (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M10 3a7 7 0 00-7 7c0 1.654.596 3.179 1.585 4.355L2.293 17.647a1 1 0 001.414 1.414l2.292-2.292C7.82 16.404 8.893 17 10 17a7 7 0 007-7c0-1.654-.596-3.179-1.585-4.355L17.707 2.353a1 1 0 10-1.414-1.414L14 4.293A6.968 6.968 0 0010 3zm0 12c-1.654 0-3.179-.596-4.355-1.585L15.415 4.645C16.404 5.82 17 7.345 17 9c0 3.866-3.134 7-7 7zm0-12a5 5 0 015 5c0 .502-.066.99-.188 1.45L6.55 5.188A5.002 5.002 0 0110 3z" />
-                    </svg>
-                  ) : (
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M10 3a7 7 0 00-7 7c0 1.654.596 3.179 1.585 4.355L2.293 17.647a1 1 0 001.414 1.414l2.292-2.292C7.82 16.404 8.893 17 10 17a7 7 0 007-7c0-1.654-.596-3.179-1.585-4.355L17.707 2.353a1 1 0 10-1.414-1.414L14 4.293A6.968 6.968 0 0010 3zm0 12c-1.654 0-3.179-.596-4.355-1.585L15.415 4.645C16.404 5.82 17 7.345 17 9c0 3.866-3.134 7-7 7z" />
-                    </svg>
-                  )}
+                  {isPasswordVisible ? <RiEyeCloseLine /> : <RiEyeCloseFill />}
                 </button>
               </div>
             </div>
