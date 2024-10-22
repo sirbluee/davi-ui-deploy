@@ -15,10 +15,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.className}>
-      <body className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}>
+      <body
+        className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}
+      >
         {children}
         <footer>
-       <Footer/>
+          <Footer />
         </footer>
       </body>
     </html>

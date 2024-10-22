@@ -8,8 +8,8 @@ export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="px-4 py-4 text-white">
-      <div className="container mx-auto flex justify-between items-center px-4 lg:px-16 xl:px-0 xl:max-w-[calc(100%-400px)]">
+    <nav className="text-white">
+      <div className="container mx-auto px-8 lg:px-36 flex justify-between items-center py-4">
         <div className="flex items-center space-x-4">
           {/* Logo */}
           <div className="text-xl font-bold">
