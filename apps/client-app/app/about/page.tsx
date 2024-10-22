@@ -6,11 +6,11 @@ import about_image_1 from "@/public/images/about/about_image_1.png";
 import about_image_2 from "@/public/images/about/about_image_2.png";
 import about_image_3 from "@/public/images/about/about_image_3.png";
 import { mockData, features_1, features_2, teamMembers } from "./mockData";
-import BrainStormCard from "@/app/components/about/brainStomCard";
-import FeatureCard from "@/app/components/about/FeaturesListCard";
+import BrainStormCard from "@/app/about/components/brainStomCard";
+import FeatureCard from "@/app/about/components/FeaturesListCard";
 import bgTeam from "@/public/images/about/background/bgteam.png";
-import { TeamMemberCard } from "@/app/components/about/TeamMemberCard";
-import { Button } from "@/app/components/about/atoms/Button";
+import { TeamMemberCard } from "@/app/about/components/TeamMemberCard";
+import { Button } from "@/app/about/components/atoms/Button";
 
 export default function AboutPage() {
   return (
