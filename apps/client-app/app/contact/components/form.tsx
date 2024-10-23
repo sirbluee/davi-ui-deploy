@@ -32,9 +32,10 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex justify-center items-center mt-16 ">
-      <div className="w-4/5 relative bg-[#F3F8FF] mx-[150px] rounded-2xl flex overflow-hidden ">
-        <div className="w-1/2 p-16">
+    <div className="flex justify-center items-center mt-[60px] ">
+      <div className="w-[72%] relative bg-[#F3F8FF] mx-auto rounded-2xl overflow-hidden grid lg:grid-cols-2 md:grid-cols-1 ">
+        {/* <div className="w-1/2 p-16"> */}
+        <div className=" p-16">
           <header className="font-bold text-4xl text-[#3F4655]">
             Contact us
           </header>
@@ -92,10 +93,15 @@ export default function ContactForm() {
             </button>
           </form>
         </div>
-
         {/* image */}
-        <div className="w-1/2 bg-[#F5F5F5] flex justify-center items-center text-center">
-          <Image src={ilustration} alt="" width={300}></Image>
+        {/* <div className="w-1/2 bg-[#F5F5F5] flex justify-center items-center text-center"> */}
+        <div className=" bg-[#F5F5F5] flex justify-center items-center text-center ">
+          <Image
+            src={ilustration}
+            alt=""
+            width={300}
+            className="hidden lg:block md:block sm:hidden"
+          ></Image>
         </div>
       </div>
     </div>
