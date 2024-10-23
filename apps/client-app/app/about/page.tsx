@@ -40,9 +40,9 @@ export default function AboutPage() {
             Solutions for Your Large Enterprise
           </h2>
           <p className="mb-6 text-lg font-light text-gray-600 text-center lg:text-left">
-            Empower your business with DAVI's cutting-edge analytics platform,
+            {`Empower your business with DAVI's cutting-edge analytics platform,
             offering fast data processing and secure cloud solutions, tailored
-            for scalability and performance.
+            for scalability and performance.`}
           </p>
           {/* Feature List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
