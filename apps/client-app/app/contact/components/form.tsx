@@ -32,11 +32,11 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex justify-center items-center mt-[60px] ">
-      <div className="w-[72%] relative bg-[#F3F8FF] mx-auto rounded-2xl overflow-hidden grid lg:grid-cols-2 md:grid-cols-1 ">
+    <div className="flex justify-center items-center mt-[60px] max-[500px]:mt-[50px]">
+      <div className="w-[72%] relative bg-[#F3F8FF] mx-auto rounded-2xl overflow-hidden grid lg:grid-cols-2 md:grid-cols-1  max-[500px]:w-[85%]">
         {/* <div className="w-1/2 p-16"> */}
-        <div className=" p-16">
-          <header className="font-bold text-4xl text-[#3F4655]">
+        <div className=" p-16 max-[500px]:p-8">
+          <header className="font-bold text-4xl text-[#3F4655]  max-[500px]:text-[30px]  max-[500px]:text-center">
             Contact us
           </header>
           <form
@@ -87,7 +87,7 @@ export default function ContactForm() {
             {/* send message */}
             <button
               type="submit"
-              className="mt-12 bg-[#443DFF] text-white border w-[150px] p-3 rounded-lg font-bold"
+              className="mt-12 bg-[#443DFF] text-white border w-[150px] p-3 rounded-lg font-bold max-[500px]:w-full"
             >
               Send Message
             </button>
