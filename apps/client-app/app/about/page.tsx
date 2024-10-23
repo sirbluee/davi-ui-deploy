@@ -26,6 +26,7 @@ export default function AboutPage() {
             width={600}
             height={400}
             className="rounded-lg"
+            unoptimized
           />
         </div>
         <div className="w-full lg:max-w-md mx-auto p-2 lg:p-4">
@@ -100,6 +101,7 @@ export default function AboutPage() {
               width={600}
               height={500}
               className="rounded-lg"
+              unoptimized
             />
           </div>
           <div className="w-full lg:w-1/2 p-4 space-y-4 mt-8 lg:mt-0 lg:pl-[15%]">

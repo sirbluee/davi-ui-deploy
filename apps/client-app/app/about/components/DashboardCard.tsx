@@ -128,6 +128,7 @@ const DashboardCard: FC = () => {
                 alt="smey09"
                 layout="fill"
                 objectFit="cover"
+                unoptimized
               />
             </div>
 
