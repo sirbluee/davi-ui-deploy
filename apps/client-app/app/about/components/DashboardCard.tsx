@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
-import github_img from "@/public/images/about/github.jpeg";
+import man_image from "@/public/images/about/man.jpg";
+import user_image from "@/public/images/about/User.png";
 
 const DashboardCard: FC = () => {
   return (
@@ -106,7 +107,14 @@ const DashboardCard: FC = () => {
             <div className="relative flex items-center justify-center w-48 h-48 transform transition-transform duration-300 hover:scale-105 lg:hover:scale-110">
               {/* Center Avatar */}
               <div className="w-16 h-16 rounded-full bg-orange-200 flex items-center justify-center z-10">
-                <div className="w-12 h-12 rounded-full bg-orange-300"></div>
+                <Image
+                  src={user_image}
+                  alt="user_image"
+                  height={150}
+                  width={150}
+                  quality={100}
+                  className="transform -scale-x-100"
+                />
               </div>
 
               {/* Orbits */}
@@ -124,7 +132,7 @@ const DashboardCard: FC = () => {
           <div className="mt-6 p-3 bg-gray-100 rounded-md flex items-center space-x-2 hover:bg-slate-300 transform transition-transform duration-300 hover:scale-105">
             <div className="w-8 h-8 bg-gray-200 rounded-lg relative overflow-hidden">
               <Image
-                src={github_img}
+                src={man_image}
                 alt="smey09"
                 layout="fill"
                 objectFit="cover"

@@ -23,7 +23,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           height={100}
           width={100}
           className="object-cover w-full h-full transition-transform duration-300 hover:scale-125"
-          unoptimized
+          quality={100}
         />
       </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import about_image_1 from "@/public/images/about/about_image_1.png";
@@ -13,6 +14,11 @@ import { OurTeam } from "./components/blockCode/OurTeam";
 import DashboardCard from "./components/DashboardCard";
 
 export default function AboutPage() {
+  const router = useRouter();
+
+  const handleLearnMoreClick = () => {
+    router.push("/service");
+  };
   return (
     <div>
       {/* Hero Section */}
@@ -52,7 +58,7 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-center lg:justify-start mt-4">
-            <Button text="Learn More" />
+            <Button text="Learn More" onClick={handleLearnMoreClick} />
           </div>
         </div>
       </div>
@@ -115,7 +121,7 @@ export default function AboutPage() {
               results.
             </p>
             <div className="flex justify-center lg:justify-start mt-2">
-              <Button text="Learn More" />
+              <Button text="Learn More" onClick={handleLearnMoreClick} />
             </div>
           </div>
         </div>

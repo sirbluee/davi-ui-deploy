@@ -51,16 +51,16 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
         <div className="flex justify-center space-x-3 mt-3">
           <a
             href={member.socialLinks.facebook}
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="text-blue-600 hover:text-blue-800 transition-colors hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name}'s Facebook`}
           >
-            <FaFacebookF size={20} />
+            <FaFacebookF size={18} />
           </a>
           <a
             href={member.socialLinks.linkedin}
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="text-blue-600 hover:text-blue-800 transition-colors hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name}'s LinkedIn`}
@@ -69,7 +69,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           </a>
           <a
             href={member.socialLinks.github}
-            className="text-gray-600 hover:text-gray-800 transition-colors"
+            className="text-gray-600 hover:text-gray-800 transition-colors hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name}'s GitHub`}
