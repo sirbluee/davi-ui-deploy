@@ -1,4 +1,7 @@
+import Image from "next/image";
 import React from "react";
+
+import BannerImage from '@/public/images/about/aboutSection.png'
 
 export const HeroSection = () => {
   return (
@@ -27,9 +30,8 @@ export const HeroSection = () => {
 
         {/* Image */}
         <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-          <img
-            src="./images/about/aboutSection.png"
-            alt="Our Services"
+          <Image width={500} height={500} alt="Our Services" unoptimized={true}
+            src={BannerImage}
             className="w-full max-w-[570px] h-auto"
           />
         </div>

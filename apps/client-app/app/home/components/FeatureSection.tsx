@@ -59,7 +59,7 @@ export default function FeaturesSection() {
             {features.map((feature) => (
               <div
                 key={feature._id}
-                className="relative p-6 rounded-lg shadow-md text-left"
+                className="relative p-6 rounded-lg border-[1px] text-left duration-200 hover:border-[0px] hover:scale-105 hover:shadow-md"
                 style={{
                   backgroundImage: `url(${feature.backgroundImage})`,
                   backgroundSize: "cover",
