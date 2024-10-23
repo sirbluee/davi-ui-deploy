@@ -6,15 +6,16 @@ import Link from "next/link";
 import { MenuList } from "./menu";
 import { usePathname } from "next/navigation";
 
+// type MenuItem = {
+//   name: string;
+//   path: string;
+//   active: boolean;
+// };
+
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // const [menu, setMenu] = useState<MenuItem[]>(MenuList);
   const pathname = usePathname();
-
-  const updatedMenuList = MenuList.map((item) => ({
-    ...item,
-    active: item.path === pathname,
-  }));
 
   return (
     <nav className="text-white">
@@ -33,22 +34,20 @@ export default function NavbarComponent() {
             </Link>
           </div>
         </div>
-
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-8">
-          {updatedMenuList.map((item, index) => (
+          {MenuList.map((item, index) => (
             <Link
-              className={`text-white font-medium ${
-                item.active ? "bg-gray-100 text-blue-900 px-2 py-1 rounded-md font-bold" : "hover:text-gray-200"
-              }`}
               key={index}
               href={item.path}
+              className={`font-medium ${
+                item.path === pathname ? "bg-gray-100 text-blue-900 font-bold rounded-md py-1 px-2" : "text-white"
+              } hover:text-blue-200`}
             >
               {item.name}
             </Link>
           ))}
         </div>
-
         {/* Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <Link
@@ -70,7 +69,6 @@ export default function NavbarComponent() {
             </span>
           </Link>
         </div>
-
         {/* Hamburger Menu for Mobile */}
         <div className="md:hidden">
           <button
