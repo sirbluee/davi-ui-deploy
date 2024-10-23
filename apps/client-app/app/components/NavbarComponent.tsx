@@ -123,7 +123,7 @@ export default function NavbarComponent() {
         </button>
         <div className="flex flex-col items-start space-y-6 mt-10 p-6">
           <Link
-            href="/home"
+            href="/"
             className="text-white hover:text-gray-200 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >
