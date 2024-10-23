@@ -8,15 +8,14 @@ import ContactForm from "./components/form";
 export default function ContactPage() {
   return (
     <>
-      <div className="w-full">
-        <div>
+      <div className="w-full relative">
           {/* Background image */}
           <div className="absolute w-full h-[535px]">
             <Image className="w-full h-[535px]" src={BGImage} alt=""></Image>
           </div>
           {/* text */}
           <div className="flex flex-col justify-center items-center relative mt-[100px] w-full">
-            <span className="text-center">
+            <span className="text-center mt-[70px]">
               <h1 className="font-bold text-3xl text-white mb-10">
                 {"We're"} Here to Help!
               </h1>
@@ -35,20 +34,20 @@ export default function ContactPage() {
           {/* Get in touch and let's talk */}
           <section>
             <div className="flex flex-col  text-center">
-              <h1 className="font-extrabold text-4xl text-[#3F4655] my-20">
+              <h1 className="font-extrabold text-4xl text-[#3F4655] mt-20 lg:text-4xl md:text-[45px] sm:text-[30px]">
                 Get in Touch with Us & {"let's"} Talk
               </h1>
               {/* connect with us */}
-              {/* get in touch */}
+              {/* get in touch */} 
             </div>
-            <div className="w-auto mx-[150px] grid grid-cols-3 gap-40 ">
+            <div className="w-[72%] m-auto grid my-20 grid-col-1 lg:grid-cols-3 lg:gap-44 md:grid-cols-1 md:gap-14 sm:grid-col-1 sm:gap-14">
               {/* schedule a demo */}
               <div className="space-y-5">
                 <header className="flex  items-center text-center space-x-3">
                   <div>
                     <Image src={scrollIcon} alt=""></Image>
                   </div>
-                  <span className="font-bold text-[20px]">Contact with Us</span>
+                  <span className="font-bold text-[20px] ">Contact with Us</span>
                 </header>
                 <p>
                   Experience how DAVI can transform your data <br /> into
@@ -85,7 +84,6 @@ export default function ContactPage() {
               </div>
             </div>
           </section>
-        </div>
       </div>
     </>
   );
