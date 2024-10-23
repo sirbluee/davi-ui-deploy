@@ -6,7 +6,7 @@ export default function HeroSection() {
     <>
       {/* Hero Section */}
       <section
-        className="relative text-white text-left h-screen" // Changed to left-aligned text
+        className="relative text-white text-left h-screen flex items-center justify-center"
         style={{
           backgroundImage: `url('/images/home/hero.png')`,
           backgroundSize: "cover",

@@ -1,8 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import parallax from "@/public/images/home/paralax.png";
-import classNames from "classnames";
 
 export default function CTASection() {
   return (
@@ -34,7 +31,6 @@ export default function CTASection() {
           </div>
         </div>
       </section>
-    
     </>
   );
 }
