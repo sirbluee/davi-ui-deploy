@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.scroll-parallax {
+    background-image: url('../public/images/home/paralax.png');
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: cover;
+    position: relative;
+}
+.bg-memey {
+    /* Optional semi-transparent overlay */
+    /* background: rgba(68, 75, 210, 0.2); */
+    backdrop-filter: blur(5px) !important;
+}
+
+body {
+    font-family: (
+        var(--font-inter)
+    );
+}
