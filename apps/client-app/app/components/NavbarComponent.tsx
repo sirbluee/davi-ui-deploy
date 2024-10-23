@@ -3,9 +3,19 @@ import { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/navBar/logo.png";
 import Link from "next/link";
+import { MenuList } from "./menu";
+import { usePathname } from "next/navigation";
+
+// type MenuItem = {
+//   name: string;
+//   path: string;
+//   active: boolean;
+// };
 
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [menu, setMenu] = useState<MenuItem[]>(MenuList);
+  const pathname = usePathname();
 
   return (
     <nav className="text-white">
@@ -14,39 +24,30 @@ export default function NavbarComponent() {
           {/* Logo */}
           <div className="text-xl font-bold">
             <Link href="/" className="flex items-center">
-              <Image src={Logo} alt="logo" width={110} height={110} />
+              <Image
+                src={Logo}
+                alt="logo"
+                width={110}
+                height={110}
+                unoptimized
+              />
             </Link>
           </div>
         </div>
-
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-8">
-          <Link
-            href="/home"
-            className="text-white hover:text-gray-200 font-medium"
-          >
-            Home
-          </Link>
-          <Link
-            href="/services"
-            className="text-white hover:text-gray-200 font-medium"
-          >
-            Service
-          </Link>
-          <Link
-            href="/about"
-            className="text-white hover:text-gray-200 font-medium"
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="text-white hover:text-gray-200 font-medium"
-          >
-            Contact
-          </Link>
+          {MenuList.map((item, index) => (
+            <Link
+              key={index}
+              href={item.path}
+              className={`font-medium ${
+                item.path === pathname ? "bg-gray-100 text-blue-900 font-bold rounded-md py-1 px-2" : "text-white"
+              } hover:text-blue-200`}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
-
         {/* Action Buttons */}
         <div className="hidden md:flex items-center space-x-4">
           <Link
@@ -62,13 +63,12 @@ export default function NavbarComponent() {
           >
             Sign Up
           </Link>
-          <Link href="/get-started">
-            <span className="bg-blue-600 text-white text-base font-bold px-4 py-2 rounded hover:bg-blue-700">
+          <Link href="/signup">
+            <span className="bg-blue-600 text-white text-base font-bold px-4 py-3 rounded-md hover:bg-blue-700">
               Get Started
             </span>
           </Link>
         </div>
-
         {/* Hamburger Menu for Mobile */}
         <div className="md:hidden">
           <button
@@ -162,7 +162,7 @@ export default function NavbarComponent() {
           >
             Sign Up
           </Link>
-          <Link href="/get-started" onClick={() => setIsMenuOpen(false)}>
+          <Link href="/signup" onClick={() => setIsMenuOpen(false)}>
             <span className="bg-blue-600 text-white text-base font-bold py-2 px-4 rounded-lg hover:bg-blue-700">
               Get Started
             </span>
