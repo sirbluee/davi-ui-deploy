@@ -34,6 +34,10 @@ const config: Config = {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(100%)" },
         },
+      },fontWeight: {
+        'bold-600': '700',
+        'bold-800': '800',
+        'bold-900': '900',
       },
     },
   },
