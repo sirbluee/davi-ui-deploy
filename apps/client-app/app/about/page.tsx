@@ -12,6 +12,7 @@ import { Button } from "@/app/about/components/atoms/Button";
 import { HeroSection } from "./components/blockCode/HeroSection";
 import { OurTeam } from "./components/blockCode/OurTeam";
 import DashboardCard from "./components/DashboardCard";
+import { BackgroundBeamsWithCollision } from "@/app/about/components/ui/background-animations";
 
 export default function AboutPage() {
   const router = useRouter();
@@ -24,7 +25,8 @@ export default function AboutPage() {
       {/* Hero Section */}
       <HeroSection />
       {/* Block 1 */}
-      <div className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-10 p-4 lg:p-12 items-center justify-center">
+
+      <div className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-10 p-4 lg:p-12 items-center justify-center lg:px-[15%]">
         <div className="flex-shrink-0 sm:w-1/2 sm:h-1/2 transform transition-transform duration-300 hover:scale-105">
           <Image
             src={about_image_1}
@@ -64,69 +66,70 @@ export default function AboutPage() {
       </div>
 
       {/* Block 2 */}
-      <div className="bg-gray-100 py-10 p-4 lg:p-16 lg:px-32">
-        <div className="flex flex-col lg:flex-row items-center justify-between lg:space-x-8">
-          <div className="p-5 w-full lg:w-1/2 xl:w-1/3 mx-auto lg:mx-0">
-            <h2 className="text-2xl font-bold mb-4 text-center lg:text-left">
-              Quick and Easy to Get Started
-            </h2>
-            <p className="text-gray-600 mb-4 text-center lg:text-left">
-              Start using DAVI effortlessly with seamless setup and intuitive
-              tools to optimize your data.
-            </p>
-            <div className="space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
-              {features_2.map((feature) => (
-                <FeatureCard
-                  key={feature.id}
-                  title={feature.title}
-                  description={feature.description}
-                  icon={feature.icon}
-                  alt={feature.alt}
-                />
-              ))}
+      <BackgroundBeamsWithCollision>
+        <div className="bg-gray-100 py-10 p-4 lg:p-16 lg:px-[15%]">
+          <div className="flex flex-col lg:flex-row items-center justify-between lg:space-x-8">
+            <div className="p-5 w-full lg:w-1/2 xl:w-1/2 mx-auto lg:mx-0">
+              <h2 className="text-2xl font-bold mb-4 text-center lg:text-left">
+                Quick and Easy to Get Started
+              </h2>
+              <p className="text-gray-600 mb-4 text-center lg:text-left">
+                Start using DAVI effortlessly with seamless setup and intuitive
+                tools to optimize your data.
+              </p>
+              <div className="space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                {features_2.map((feature) => (
+                  <FeatureCard
+                    key={feature.id}
+                    title={feature.title}
+                    description={feature.description}
+                    icon={feature.icon}
+                    alt={feature.alt}
+                  />
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="mt-8 lg:mt-0 lg:p-10 transform transition-transform duration-300 hover:scale-105">
-            {/* <Image
+            <div className="mt-8 lg:mt-0 lg:p-10 transform transition-transform duration-300 hover:scale-105">
+              {/* <Image
               src={about_image_2}
               alt="about_image_2"
               width={600}
               height={500}
               className="rounded-lg"
             /> */}
-            <DashboardCard />
+              <DashboardCard />
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between mt-10">
-          <div className="flex-shrink-0 sm:w-1/2 sm:h-1/2 transform transition-transform duration-300 hover:scale-105">
-            <Image
-              src={about_image_3}
-              alt="about_image_3"
-              width={600}
-              height={500}
-              className="rounded-lg"
-              unoptimized
-            />
-          </div>
-          <div className="w-full lg:w-1/2 p-4 space-y-4 mt-8 lg:mt-0 lg:pl-[15%]">
-            <h1 className="text-2xl font-bold mb-4 text-center lg:text-left transition-colors duration-300 hover:text-blue-600">
-              How We Work
-            </h1>
-            <p className="text-lg font-light text-gray-600 text-center lg:w-full lg:text-left">
-              At DAVI, we simplify the complexities of data analysis. From
-              seamless data integration to real-time insights, our platform is
-              designed to streamline your workflows and deliver actionable
-              results.
-            </p>
-            <div className="flex justify-center lg:justify-start mt-2">
-              <Button text="Learn More" onClick={handleLearnMoreClick} />
+          <div className="flex flex-col lg:flex-row items-center justify-between mt-10">
+            <div className="flex-shrink-0 sm:w-1/2 sm:h-1/2 transform transition-transform duration-300 hover:scale-105">
+              <Image
+                src={about_image_3}
+                alt="about_image_3"
+                width={600}
+                height={500}
+                className="rounded-lg"
+                unoptimized
+              />
+            </div>
+            <div className="w-full lg:w-1/2 p-4 space-y-4 mt-8 lg:mt-0 lg:pl-[15%]">
+              <h1 className="text-2xl font-bold mb-4 text-center lg:text-left transition-colors duration-300 hover:text-blue-600">
+                How We Work
+              </h1>
+              <p className="text-lg font-light text-gray-600 text-center lg:w-full lg:text-left">
+                At DAVI, we simplify the complexities of data analysis. From
+                seamless data integration to real-time insights, our platform is
+                designed to streamline your workflows and deliver actionable
+                results.
+              </p>
+              <div className="flex justify-center lg:justify-start mt-2">
+                <Button text="Learn More" onClick={handleLearnMoreClick} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
+      </BackgroundBeamsWithCollision>
       {/* Block 3 */}
       <div className="flex flex-wrap justify-center p-5 lg:p-20 gap-y-1 sm:gap-x-2">
         {mockData.map((item, index) => (
