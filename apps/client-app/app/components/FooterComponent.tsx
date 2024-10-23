@@ -13,20 +13,17 @@ import Location from "@/public/images/footer/location_icon.png";
 const Footer: React.FC = () => {
   return (
     <div
-      className="bg-[#131111] text-white w-full py-12 "
+      className="py-20 bg-black text-white w-full"
       style={{
         backgroundImage: `url('/images/footer/bg-footer.png')`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
-
-        justifyContent: "center",
-        alignItems: "center",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-4 gap-24">
-        <div className="text-center lg:text-left">
-          <h2 className="flex justify-center md:justify-start text-xl font-bold mb-2">
+      <div className="w-[80%] mx-auto grid items-start grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-8 border-b-[1.5px] border-white border-opacity-20">
+        <div className="lg:text-left">
+          <h2 className="flex justify-start text-xl font-bold mb-2">
             <Image
               src={Logo}
               alt="Description of the logo"
@@ -35,12 +32,11 @@ const Footer: React.FC = () => {
               unoptimized
             />
           </h2>
-
-          <p className="text-sm  mb-4 pt-6 pb-6">
+          <p className="text-sm mb-4 pt-6 pb-6">
             DAVI enables businesses to integrate, analyze, and visualize data
             for smarter decision-making.
           </p>
-          <div className="flex justify-center lg:justify-start space-x-4 mt-4">
+          <div className="flex justify-start space-x-4 mt-4">
             <Image
               src={Facebok}
               alt="Facebook icon"
@@ -71,7 +67,7 @@ const Footer: React.FC = () => {
             />
           </div>
         </div>
-        <div className="text-center lg:text-left">
+        <div className="lg:text-left">
           <h3 className="font-semibold mb-3">Our Services</h3>
           <ul className="space-y-2 text-sm">
             <li className="pt-4">ETL</li>
@@ -80,28 +76,28 @@ const Footer: React.FC = () => {
             <li className="pt-4">Data Analyst</li>
           </ul>
         </div>
-        <div className="text-center lg:text-left">
+        <div className="lg:text-left">
           <h3 className="font-semibold mb-3">About</h3>
           <ul className="space-y-2 text-sm">
             <li className="pt-4">How it works</li>
             <li className="pt-4">Member</li>
             <li className="pt-4">Brainstorm</li>
-        </ul>
+          </ul>
         </div>
-        <div className="text-center lg:text-left">
+        <div className="lg:text-left">
           <h3 className="font-semibold mb-3">Contact Us</h3>
-          <p className="text-sm flex items-center justify-center lg:justify-start space-x-3 pt-4">
+          <p className="text-sm flex items-center justify-start space-x-3 pt-4">
             <Image src={Message} alt="Message icon" width={24} height={24} />
             <span>davi168@gmail.com</span>
           </p>
-          <p className="text-sm flex items-center justify-center lg:justify-start space-x-3 pt-4">
+          <p className="text-sm flex items-center justify-start space-x-3 pt-4">
             <Image src={Location} alt="Location icon" width={24} height={24} />
             <span>
               AP-1295, Street Aphivath, Sangkat Chrouy Changvar, Phnom Penh,
               Cambodia. Near OCIC Wedding Center.
             </span>
           </p>
-          <p className="text-sm flex items-center justify-center lg:justify-start space-x-3 pt-4">
+          <p className="text-sm flex items-center justify-start space-x-3 pt-4">
             <Image src={Call} alt="Call icon" width={24} height={24} />
             <span>0 86 40 147</span>
           </p>
