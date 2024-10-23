@@ -8,7 +8,15 @@ import icon_data_security from "@/public/images/about/icons/icon-data-security.p
 import icon_brain_storm from "@/public/images/about/icons/icon-brain-storm.png";
 import icon_ireframing from "@/public/images/about/icons/icon-wireframing.png";
 import icon_implement from "@/public/images/about/icons/icon-implement.png";
-import profile from "@/public/images/about/profile.jpg";
+
+//our team images
+import vuthy_img from "@/public/images/about/ourTeam/chan-vuthy.jpg";
+import reaksmey_img from "@/public/images/about/ourTeam/roem-reaksmey.jpeg";
+import zhileang_img from "@/public/images/about/ourTeam/oeng-zhileang.jpg";
+import hour_img from "@/public/images/about/ourTeam/han-hour.jpg";
+import sothea_img from "@/public/images/about/ourTeam/mab-sothea.jpg";
+import phearum_img from "@/public/images/about/ourTeam/sophearum-sorn.jpg";
+import kimhong_img from "@/public/images/about/ourTeam/et-kimhong.jpg";
 
 export const features_1 = [
   {
@@ -77,79 +85,79 @@ export const mockData = [
 export const teamMembers = [
   {
     id: 1,
-    name: "Oeng Zhileang",
-    role: "Web Full Stack",
-    image: profile,
+    name: "Sophearum Sorn",
+    role: "Full stack Developer",
+    image: phearum_img,
     socialLinks: {
-      facebook: "https://facebook.com/tomoliver",
-      linkedin: "https://linkedin.com/in/tomoliver",
-      github: "https://github.com/tomoliver",
+      facebook: "https://www.facebook.com/sophearum.sorn",
+      linkedin: "",
+      github: "https://github.com/sirbluee",
     },
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Et Kimhong",
     role: "UI/UX Designer",
-    image: profile,
+    image: kimhong_img,
     socialLinks: {
-      facebook: "https://facebook.com/janesmith",
-      linkedin: "https://linkedin.com/in/janesmith",
-      github: "https://github.com/janesmith",
+      facebook: "https://www.facebook.com/profile.php?id=100041867020361",
+      linkedin: "",
+      github: "https://github.com/etkimhong",
     },
   },
   {
     id: 3,
-    name: "John Doe",
+    name: "Mab Sothea",
     role: "Backend Developer",
-    image: profile,
+    image: sothea_img,
     socialLinks: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      github: "https://github.com/johndoe",
+      facebook: "https://www.facebook.com/sm.nu15",
+      linkedin: "https://www.linkedin.com/in/mab-sothea-77a35b334/",
+      github: "https://github.com/easycode002",
     },
   },
   {
     id: 4,
-    name: "John Doe",
-    role: "Backend Developer",
-    image: profile,
+    name: "Oeng Zhileang",
+    role: "Web Full Stack",
+    image: zhileang_img,
     socialLinks: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      github: "https://github.com/johndoe",
+      facebook: "https://www.facebook.com/ImAGamerOne",
+      linkedin: "",
+      github: "https://github.com/oengzhileang",
     },
   },
   {
     id: 5,
-    name: "John Doe",
-    role: "Backend Developer",
-    image: profile,
+    name: "Roem Reaksmey",
+    role: "Full stack Developer",
+    image: reaksmey_img,
     socialLinks: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      github: "https://github.com/johndoe",
+      facebook: "https://www.facebook.com/smey.ultras",
+      linkedin: "https://www.linkedin.com/in/roem-reaksmey-163421280/",
+      github: "https://github.com/Smey09",
     },
   },
   {
     id: 6,
-    name: "John Doe",
-    role: "Backend Developer",
-    image: profile,
+    name: "Chan Vuthy",
+    role: "Full Stack Developer",
+    image: vuthy_img,
     socialLinks: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      github: "https://github.com/johndoe",
+      facebook: "https://www.facebook.com/alone.simple.5",
+      linkedin: "https://www.linkedin.com/in/chan-vuthy-5a1aa6334/",
+      github: "https://github.com/Vuthyy",
     },
   },
   {
     id: 7,
-    name: "John Doe",
-    role: "Backend Developer",
-    image: profile,
+    name: "Han Huor",
+    role: "Web Full Stack",
+    image: hour_img,
     socialLinks: {
-      facebook: "https://facebook.com/johndoe",
-      linkedin: "https://linkedin.com/in/johndoe",
-      github: "https://github.com/johndoe",
+      facebook: "https://www.facebook.com/hour.bmc.75?mibextid=ZbWKwL",
+      linkedin: " https://www.linkedin.com/in/han-huor-48a50b268/",
+      github: " https://github.com/winhuor007",
     },
   },
 ];

@@ -27,7 +27,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
     <div className="relative p-2 sm:p-6 bg-gray-100 rounded-lg shadow-md w-40 sm:w-56 h-52 sm:h-64 mx-auto overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg group">
       {/* Background Container */}
       <div className="absolute inset-0 bottom-0 bg-gray-200 h-[80%] rounded-b-full opacity-50 z-0"></div>
-      <div className="relative pt-2 z-10 flex flex-col items-center space-y-4">
+      <div className="relative pt-2 z-10 flex flex-col items-center space-y-4 sm:space-y-5">
         {/* Profile Image */}
         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg transform transition-transform duration-300 hover:scale-110 sm:hover:scale-125 group-hover:border-blue-500">
           <Image
@@ -51,16 +51,16 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
         <div className="flex justify-center space-x-3 mt-3">
           <a
             href={member.socialLinks.facebook}
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="text-blue-600 hover:text-blue-800 transition-colors hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name}'s Facebook`}
           >
-            <FaFacebookF size={20} />
+            <FaFacebookF size={18} />
           </a>
           <a
             href={member.socialLinks.linkedin}
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="text-blue-600 hover:text-blue-800 transition-colors hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name}'s LinkedIn`}
@@ -69,7 +69,7 @@ export const TeamMemberCard: React.FC<TeamMemberCardProps> = ({ member }) => {
           </a>
           <a
             href={member.socialLinks.github}
-            className="text-gray-600 hover:text-gray-800 transition-colors"
+            className="text-gray-600 hover:text-gray-800 transition-colors hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`${member.name}'s GitHub`}
