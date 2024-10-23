@@ -76,10 +76,10 @@ export default function ServiceSection() {
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-white p-4 rounded-2xl shadow-sm border-[1.5px] border-[#E6EDFF] text-left"
+              className="bg-white p-4 rounded-2xl hover:shadow-xl border-[1.5px] border-[#E6EDFF] text-left duration-200 hover:scale-105"
             >
               {service.icon && (
-                <Image
+                <Image unoptimized={true}
                   src={service.icon}
                   alt={`${service.title} Icon`}
                   width={40}
@@ -92,7 +92,7 @@ export default function ServiceSection() {
             </div>
           ))}
         </div>
-        <Image
+        <Image unoptimized
           src={Pattern}
           alt="pattern"
           width={80}
