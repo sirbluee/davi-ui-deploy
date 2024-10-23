@@ -32,6 +32,7 @@ const Footer: React.FC = () => {
               alt="Description of the logo"
               width={123}
               height={36}
+              unoptimized
             />
           </h2>
 
@@ -40,14 +41,33 @@ const Footer: React.FC = () => {
             for smarter decision-making.
           </p>
           <div className="flex justify-center lg:justify-start space-x-4 mt-4">
-            <Image src={Facebok} alt="Facebook icon" width={38} height={38} />
-            <Image src={Linkedin} alt="LinkedIn icon" width={38} height={38} />
-            <Image src={Twitter} alt="Twitter icon" width={38} height={38} />
+            <Image
+              src={Facebok}
+              alt="Facebook icon"
+              width={38}
+              height={38}
+              unoptimized
+            />
+            <Image
+              src={Linkedin}
+              alt="LinkedIn icon"
+              width={38}
+              height={38}
+              unoptimized
+            />
+            <Image
+              src={Twitter}
+              alt="Twitter icon"
+              width={38}
+              height={38}
+              unoptimized
+            />
             <Image
               src={Instargram}
               alt="Instagram icon"
               width={38}
               height={38}
+              unoptimized
             />
           </div>
         </div>
@@ -66,7 +86,7 @@ const Footer: React.FC = () => {
             <li className="pt-4">How it works</li>
             <li className="pt-4">Member</li>
             <li className="pt-4">Brainstorm</li>
-          </ul>
+        </ul>
         </div>
         <div className="text-center lg:text-left">
           <h3 className="font-semibold mb-3">Contact Us</h3>
