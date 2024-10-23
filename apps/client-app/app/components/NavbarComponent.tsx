@@ -41,7 +41,9 @@ export default function NavbarComponent() {
               key={index}
               href={item.path}
               className={`font-medium ${
-                item.path === pathname ? "bg-gray-100 text-blue-900 font-bold rounded-md py-1 px-2" : "text-white"
+                item.path === pathname
+                  ? "bg-gray-100 text-blue-900 font-bold rounded-md py-1 px-2"
+                  : "text-white"
               } hover:text-blue-200`}
             >
               {item.name}
@@ -95,17 +97,17 @@ export default function NavbarComponent() {
 
       {/* Right Sidebar Navigation for Mobile */}
       <div
-        className={`fixed top-0 right-0 h-full w-64 bg-blue-900 text-white transform ${
+        className={`fixed top-0 right-0 h-full w-64 bg-blue-900 text-white transform rounded-xl ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out z-20`}
       >
         {/* Close Button */}
         <button
           onClick={() => setIsMenuOpen(false)}
-          className="absolute top-4 right-4 text-white"
+          className="absolute top-4 right-9 text-white"
         >
           <svg
-            className="w-6 h-6"
+            className="w-7 h-7"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -121,7 +123,7 @@ export default function NavbarComponent() {
         </button>
         <div className="flex flex-col items-start space-y-6 mt-10 p-6">
           <Link
-            href="/home"
+            href="/"
             className="text-white hover:text-gray-200 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >

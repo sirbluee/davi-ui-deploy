@@ -10,7 +10,7 @@ export default function HeroSection() {
         style={{
           backgroundImage: `url('/images/home/hero.png')`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "center left",
         }}
       >
         <div className="container mx-auto px-8 lg:px-36 relative z-10 flex flex-col items-start justify-center h-full">
