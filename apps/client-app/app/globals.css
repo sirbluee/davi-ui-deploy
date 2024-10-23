@@ -1,31 +1,87 @@
+/* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-.scroll-parallax{
-    background-image: url('../public/images/home/paralax.png');
-    background-position:top ;
+.scroll-parallax {
+    background-image: url('/images/home/paralax.png');
+    background-position: top;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-clip: border-box;
     background-size: 100% !important;
     position: relative !important;
 }
-.bg-memey{
+
+.bg-memey {
     background: rgba(68, 75, 210, 0.2) !important;
 }
 
-.scroll-parallax11{
-    background-image: url('../public/images/home/paralax.png');
-    /* background-position:top ;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-clip: border-box;
-    background-size: 100% !important;
-    position: relative !important; */
+.scroll-parallax11 {
+    background-image: url('/images/home/paralax.png');
 }
+
 body {
-    font-family: (
-        var(--font-inter)
-    );
+    font-family: var(--font-inter);
 }
+
+/* @keyframes scroll {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+} */
+
+/* @keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
+@keyframes scroll-vertical-reverse {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* .animate-scroll {
+  animation-name: scroll;
+  animation-duration: 20s; 
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} */
+
+/* .animate-scroll-horizontal {
+  animation-name: scroll-horizontal;
+  animation-duration: 20s; 
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} */
+
+/* .animate-scroll-vertical-reverse {
+  animation-name: scroll-vertical-reverse;
+  animation-duration: 20s; 
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+} */
+
+/* @keyframes marquee-scroll {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
+
+/* .animate-marquee {
+  animation: marquee-scroll 15s linear infinite;
+} */

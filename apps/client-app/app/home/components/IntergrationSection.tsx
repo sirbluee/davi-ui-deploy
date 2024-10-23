@@ -1,7 +1,8 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-import SideIntergrate from "@/public/images/home/sideIntergrateSection.png";
 import ScanImg from "@/public/images/home/span.png";
+import Marquee, { mockMessages } from "./marquee";
 
 export default function IntergrationSection() {
   return (
@@ -9,9 +10,22 @@ export default function IntergrationSection() {
       <section className="bg-gray-100">
         <div className="container mx-auto flex flex-col md:flex-row items-center md:-space-x-16 space-y-8 md:space-y-0">
           {/* Left Side - Image List */}
-          <div className="w-full md:w-[40%] flex justify-center">
-            <div className="relative">
-              {/* <MarqueeDemo/> */}
+          <div className="flex w-full h-full md:w-[40%] justify-center gap-8">
+            <div className="">
+              <Marquee
+                items={mockMessages}
+                direction="vertical"
+                speed={0.2}
+                reverse={false}
+              />
+            </div>
+            <div className="">
+              <Marquee
+                items={mockMessages}
+                direction="vertical"
+                speed={0.2}
+                reverse={true}
+              />
             </div>
           </div>
 
