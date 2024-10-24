@@ -8,7 +8,7 @@ import ContactForm from "./components/form";
 export default function ContactPage() {
   return (
     <>
-      <div className="w-full relative">
+      <div className="w-full relative scroll-smooth">
         {/* Background image */}
         <div className="absolute w-full h-[535px]">
           <Image className="w-full h-[535px]" src={BGImage} alt=""></Image>
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 actionable insights. Book a free demo with <br /> one of our
                 experts to see DAVI in action.
               </p>
-              <button className="bg-[#443DFF] text-white border p-3 rounded-lg font-bold">
+              <button className="bg-[#443DFF] text-white border p-3 rounded-lg font-bold hover:bg-blue-800 active:bg-blue-900 focus:outline-none focus:ring focus:ring-blue-400 shadow-lg">
                 Get Started
               </button>
             </div>
