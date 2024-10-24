@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AlertCircle, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function EmailVerification() {
   const [verificationCode, setVerificationCode] = useState([
@@ -15,6 +16,8 @@ export default function EmailVerification() {
   ]);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  const router = useRouter();
 
   const handleChange = (index: number, value: string) => {
     if (value.length <= 1 && /^[0-9]*$/.test(value)) {
@@ -124,6 +127,7 @@ export default function EmailVerification() {
             </div>
           )}
           <button
+            onClick={() => router.push('/')}
             type="submit"
             className="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           >
