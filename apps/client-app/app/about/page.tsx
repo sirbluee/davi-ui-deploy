@@ -9,13 +9,13 @@ import about_image_3 from "@/public/images/about/about_image_3.png";
 //background animation
 import bg_animation from "@/public/images/about/background/processing-data.gif";
 
-import { mockData, features_1, features_2 } from "./mockData";
+import { mockData, features_1, features_2 } from "@/app/about/mockData";
 import BrainStormCard from "@/app/about/components/brainStomCard";
 import FeatureCard from "@/app/about/components/FeaturesListCard";
 import { Button } from "@/app/about/components/atoms/Button";
 import { HeroSection } from "./components/blockCode/HeroSection";
-import { OurTeam } from "./components/blockCode/OurTeam";
-import DashboardCard from "./components/DashboardCard";
+import { OurTeam } from "@/app/about/components/blockCode/OurTeam";
+import DashboardCard from "@/app/about/components/DashboardCard";
 import { BackgroundBeamsWithCollision } from "@/app/about/components/ui/background-animations";
 
 export default function AboutPage() {
@@ -31,12 +31,12 @@ export default function AboutPage() {
         <HeroSection />
 
         {/* Card Section */}
-        <div className="absolute top-[45%]  transform -translate-y-1/2 w-full justify-center gap-y-1 sm:gap-x-2 z-10">
-          <div className="flex flex-wrap justify-center p-5 lg:p-10 gap-y-1 sm:gap-x-2">
+        <div className="absolute top-[45%] lg:top-[43%] transform -translate-y-1/2 w-full justify-center z-10 sm:px-8 md:px-12 lg:px-24 xl:px-36">
+          <div className="flex flex-wrap justify-center gap-y-4 sm:gap-4 md:gap-6">
             {mockData.map((item, index) => (
               <div
                 key={index}
-                className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 transform transition-transform duration-300 hover:scale-105"
+                className="sm:w-1/2 md:w-1/3 lg:w-1/4 transform transition-transform duration-300 hover:scale-105"
               >
                 <BrainStormCard
                   icon={item.icon}
@@ -50,7 +50,7 @@ export default function AboutPage() {
 
         {/* Block 1 */}
         <div
-          className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-10 p-4 lg:p-12 items-end justify-end lg:px-[15%] bg-cover bg-center min-h-screen"
+          className="flex flex-col lg:flex-row space-y-6 lg:space-y-0 lg:space-x-10 p-4 lg:p-12 items-center lg:items-start justify-between pt-20 lg:pt-48 lg:px-[15%] bg-cover bg-center min-h-screen"
           style={{
             backgroundImage: `url(${bg_animation.src})`,
           }}
@@ -83,6 +83,8 @@ export default function AboutPage() {
                   description={feature.description}
                   icon={feature.icon}
                   alt={feature.alt}
+                  titleColor="text-while" // Custom title color
+                  descriptionColor="text-slate-300" // Custom description color
                 />
               ))}
             </div>
@@ -112,6 +114,8 @@ export default function AboutPage() {
                     description={feature.description}
                     icon={feature.icon}
                     alt={feature.alt}
+                    titleColor="text-black" // Custom title color
+                    descriptionColor="text-gray-500"
                   />
                 ))}
               </div>
@@ -157,24 +161,8 @@ export default function AboutPage() {
           </div>
         </div>
       </BackgroundBeamsWithCollision>
-      {/* Block 3 */}
 
-      {/* <div className="flex flex-wrap justify-center p-5 lg:p-20 gap-y-1 sm:gap-x-2">
-        {mockData.map((item, index) => (
-          <div
-            key={index}
-            className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2 transform transition-transform duration-300 hover:scale-105"
-          >
-            <BrainStormCard
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
-            />
-          </div>
-        ))}
-      </div> */}
-
-      {/* Block 4 our Team */}
+      {/* Block 3 our Team */}
       <OurTeam />
     </div>
   );

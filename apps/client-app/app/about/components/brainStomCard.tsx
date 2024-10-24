@@ -6,29 +6,34 @@ interface BrainStormCardProps {
   icon: string | StaticImageData;
   title: string;
   description: string;
+  descriptionColor?: string; // Optional prop for text color
 }
 
 const BrainStormCard: React.FC<BrainStormCardProps> = ({
   icon,
   title,
   description,
+  descriptionColor = "text-gray-600", // Default color if not provided
 }) => {
   return (
-    <CardSpotlight className=" text-black hover:text-white">
-      <div className="w-full flex flex-col space-y-2 items-center justify-start transition-transform transform hover:scale-105 duration-300 ease-in-out h-full">
+    <CardSpotlight className="text-black hover:text-white">
+      <div className="w-full lg:h-[280px] flex flex-col space-y-3 items-center justify-start transition-transform transform hover:scale-105 duration-300 ease-in-out h-full">
         <div className="overflow-hidden transition-all duration-300 ease-in-out">
           <Image
             src={icon}
-            alt={title}
+            alt={`Icon for ${title}`}
             width={100}
             height={100}
-            className="object-contain transition-transform duration-300 ease-in-out border-2 border-blue-200 hover:border-blue-500 rounded-full"
+            priority={true}
+            className="object-cover transition-transform duration-300 ease-in-out border-2 border-blue-200 hover:border-blue-500 rounded-full"
           />
         </div>
         <h1 className="text-xl font-bold transition-colors duration-300 ease-in-out hover:text-blue-600">
           {title}
         </h1>
-        <p className="text-center text-gray-600 hover:text-white transition-colors duration-300 ease-in-out ">
+        <p
+          className={`text-center transition-colors duration-300 ease-in-out ${descriptionColor} hover:text-white`}
+        >
           {description}
         </p>
       </div>

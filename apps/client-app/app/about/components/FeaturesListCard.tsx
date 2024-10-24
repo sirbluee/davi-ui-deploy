@@ -5,6 +5,8 @@ interface FeatureCardProps {
   description: string;
   icon: string | StaticImageData;
   alt: string;
+  titleColor?: string; // Optional prop for title color
+  descriptionColor?: string; // Optional prop for description color
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({
@@ -12,6 +14,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
   icon,
   alt,
+  titleColor,
+  descriptionColor,
 }) => {
   return (
     <div className="flex flex-col sm:flex-row items-center transition-transform transform hover:scale-105">
@@ -29,10 +33,12 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 
       {/* Content Section */}
       <div className="text-center sm:text-left sm:ml-6 mt-4 sm:mt-0">
-        <h3 className="font-semibold text-lg transition-colors duration-300 hover:text-blue-600">
+        <h3
+          className={`font-semibold ${titleColor} text-lg transition-colors duration-300 hover:text-blue-600`}
+        >
           {title}
         </h3>
-        <p className="text-gray-400 mb-2">{description}</p>
+        <p className={`${descriptionColor} mb-2`}>{description}</p>
       </div>
     </div>
   );
