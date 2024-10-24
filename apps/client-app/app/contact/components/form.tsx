@@ -70,7 +70,7 @@ export default function ContactForm() {
 
             {/* tell us about project */}
             <div className="flex flex-col">
-              <label
+              {/* <label
                 htmlFor="about project"
                 className="font-normal text-[16px] text-stone-400"
               >
@@ -81,7 +81,15 @@ export default function ContactForm() {
                 className="border-b border-black bg-transparent outline-none mt-10"
                 value={projectDetails}
                 onChange={(e) => setProjectDetails(e.target.value)}
-              />
+              /> */}
+              <textarea
+                name=""
+                id=""
+                className="bg-transparent outline-none border-b border-black"
+                placeholder="Tell Us About Project"
+                value={projectDetails}
+                onChange={(e) => setProjectDetails(e.target.value)}
+              ></textarea>
             </div>
 
             {/* send message */}
