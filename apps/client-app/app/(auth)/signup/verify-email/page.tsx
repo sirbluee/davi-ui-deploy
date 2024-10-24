@@ -79,6 +79,7 @@ export default function EmailVerification() {
             width={200}
             height={200}
             alt="Picture of the author"
+            unoptimized
           />
         </div>
         <h2 className="text-2xl font-bold mb-4 text-center">

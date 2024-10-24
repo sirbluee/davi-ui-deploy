@@ -159,6 +159,7 @@ export default function LoginPage() {
             alt="Login"
             width={500}
             height={500}
+            unoptimized
           />
         </div>
       </div>
