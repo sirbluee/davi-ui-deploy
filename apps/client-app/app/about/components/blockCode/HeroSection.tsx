@@ -1,14 +1,15 @@
 import Image from "next/image";
 import React from "react";
 
-import BannerImage from '@/public/images/about/aboutSection.png'
+import BannerImage from "@/public/images/about/aboutSection.png";
+import bgBanner from "@/public/images/about/background/bg-Banner.png";
 
 export const HeroSection = () => {
   return (
     <section
-      className="relative text-white text-left h-auto md:h-[535px] w-full"
+      className="relative text-white text-left h-auto md:h-[600px] w-full"
       style={{
-        backgroundImage: `url('/images/about/background2.png')`,
+        backgroundImage: `url(${bgBanner.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -30,7 +31,11 @@ export const HeroSection = () => {
 
         {/* Image */}
         <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-          <Image width={500} height={500} alt="Our Services" unoptimized={true}
+          <Image
+            width={500}
+            height={500}
+            alt="Our Services"
+            unoptimized={true}
             src={BannerImage}
             className="w-full max-w-[570px] h-auto"
           />
