@@ -32,7 +32,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         <h3 className="font-semibold text-lg transition-colors duration-300 hover:text-blue-600">
           {title}
         </h3>
-        <p className="text-gray-500 mb-2">{description}</p>
+        <p className="text-gray-400 mb-2">{description}</p>
       </div>
     </div>
   );
