@@ -4,7 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
+    "start": "react-scripts start",
+    "dev": "webpack serve --config webpack/webpack.config.js --env env=dev --open",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
@@ -44,6 +45,7 @@
     "postcss": "^8.4.47",
     "postcss-loader": "^8.1.1",
     "react-refresh": "^0.14.2",
+    "react-scripts": "^5.0.1",
     "storybook": "^8.3.6",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.14",
@@ -52,5 +54,17 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^5.1.0",
     "webpack-merge": "^6.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
