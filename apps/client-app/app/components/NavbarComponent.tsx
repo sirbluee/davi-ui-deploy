@@ -1,24 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/navBar/logo.png";
 import Link from "next/link";
 import { MenuList } from "./menu";
 import { usePathname } from "next/navigation";
 
-// type MenuItem = {
-//   name: string;
-//   path: string;
-//   active: boolean;
-// };
-
 export default function NavbarComponent() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [menu, setMenu] = useState<MenuItem[]>(MenuList);
+  const [navBg, setNavBg] = useState(false);
   const pathname = usePathname();
 
+  // Add scroll effect to change background color
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 90) {
+        setNavBg(true);
+      } else {
+        setNavBg(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="text-white">
+    <nav
+      className={`text-white fixed top-0 left-0 w-full z-20 transition-all duration-300 ${
+        navBg ? "bg-[#202A79] shadow-lg" : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-8 lg:px-36 flex justify-between items-center py-4">
         <div className="flex items-center space-x-4">
           {/* Logo */}

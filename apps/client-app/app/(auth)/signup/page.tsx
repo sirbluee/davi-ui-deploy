@@ -19,7 +19,7 @@ export default function SignUpPage() {
     console.log("Signing up with:", email, password, username);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     setIsLoading(false);
-    router.push("/dashboard");
+    router.push("/signup/verify-email");
   };
 
   const handleGoogleSignUp = () => {
@@ -217,6 +217,7 @@ export default function SignUpPage() {
             alt="Sign up"
             width={500}
             height={500}
+            unoptimized
           />
         </div>
       </div>
