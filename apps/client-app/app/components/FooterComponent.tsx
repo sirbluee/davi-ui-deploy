@@ -9,6 +9,7 @@ import Twitter from "@/public/images/footer/twiter1.png";
 import Message from "@/public/images/footer/message_icon.png";
 import Call from "@/public/images/footer/call-icon.png";
 import Location from "@/public/images/footer/location_icon.png";
+import Link from "next/link";
 
 const Footer: React.FC = () => {
   return (
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="w-[80%] mx-auto grid items-start grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-8">
+      <div className=" container mx-auto px-8 grid lg:px-36 items-start grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-8">
         <div className="lg:text-left">
           <h2 className="flex justify-start text-xl font-bold mb-2">
             <Image
@@ -70,18 +71,18 @@ const Footer: React.FC = () => {
         <div className="hidden sm:block">
           <h3 className="text-xl font-bold mb-3">Our Services</h3>
           <ul className="space-y-2 text-sm">
-            <li className="pt-4">ETL</li>
-            <li className="pt-4">Data Visualization</li>
-            <li className="pt-4">Data Cleaning</li>
-            <li className="pt-4">Data Analyst</li>
+            <li className="pt-4"> <Link href="/order/etl">ETL</Link></li>
+            <li className="pt-4"><Link href="/order/etl">Data Visualization</Link></li>
+            <li className="pt-4"><Link href="/order/etl">Data Cleaning</Link></li>
+            <li className="pt-4"><Link href="/order/etl">Data Analyst</Link></li>
           </ul>
         </div>
         <div className="hidden sm:block lg:text-left">
           <h3 className="text-xl font-bold mb-3">About</h3>
           <ul className="space-y-2 text-sm">
-            <li className="pt-4">How it works</li>
-            <li className="pt-4">Member</li>
-            <li className="pt-4">Brainstorm</li>
+            <li className="pt-4"><Link href="/order/etl">How it works</Link></li>
+            <li className="pt-4"><Link href="/order/etl">Member</Link></li>
+            <li className="pt-4"><Link href="/order/etl">Brainstorm</Link></li>
           </ul>
         </div>
 
@@ -92,7 +93,13 @@ const Footer: React.FC = () => {
             <span>davi168@gmail.com</span>
           </p>
           <p className="text-sm flex items-center justify-start space-x-3 pt-4">
-            <Image className="-mt-14" src={Location} alt="Location icon" width={24} height={24} />
+            <Image
+              className="-mt-1"
+              src={Location}
+              alt="Location icon"
+              width={24}
+              height={24}
+            />
             <span>
               AP-1295, Street Aphivath, Sangkat Chrouy Changvar, Phnom Penh,
               Cambodia. Near OCIC Wedding Center.
