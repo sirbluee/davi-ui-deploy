@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BGImage from "@/public/images/contact/images/background2.png";
+import BGImage from "@/public/images/contact/images/bg-Banner.png";
 // import ilustration from "@/public/images/contact/images/image 20.svg";
 import scrollIcon from "@/public/images/contact/images/scroll.svg";
 import messageIcon from "@/public/images/contact/images/message-2.svg";
@@ -8,17 +8,18 @@ import ContactForm from "./components/form";
 
 export const metadata = {
   title: "DAVI | Contact-Us",
-  description: "Get in touch with the DAVI team. We're here to assist you with any inquiries or support requests.",
+  description:
+    "Get in touch with the DAVI team. We're here to assist you with any inquiries or support requests.",
   keywords: ["Contact Us", "Customer Support", "Inquiries", "Support"],
 };
 
 export default function ContactPage() {
   return (
     <>
-      <div className="w-full relative">
+      <div className="w-full relative scroll-smooth">
         {/* Background image */}
-        <div className="absolute w-full h-[535px]">
-          <Image className="w-full h-[535px]" src={BGImage} alt=""></Image>
+        <div className="absolute w-full h-[600px]">
+          <Image className="w-full h-[600px]" src={BGImage} alt=""></Image>
         </div>
         {/* text */}
         <div className="flex flex-col justify-center items-center relative mt-[100px] w-full">
@@ -46,7 +47,7 @@ export default function ContactPage() {
             {/* connect with us */}
             {/* get in touch */}
           </div>
-          <div className="w-[72%] m-auto grid my-20 grid-col-1 lg:grid-cols-3 lg:gap-44 md:grid-cols-1 md:gap-14 sm:grid-col-1 sm:gap-14 max-[500px]:gap-10 max-[500px]:w-[85%]">
+          <div className="w-[70%] m-auto grid my-20 grid-col-1 lg:grid-cols-3 lg:gap-44 md:grid-cols-1 md:gap-14 sm:grid-col-1 sm:gap-14 max-[500px]:gap-10 max-[500px]:w-[85%]">
             {/* schedule a demo */}
             <div className="space-y-5">
               <header className="flex  items-center text-center space-x-3">
@@ -60,7 +61,7 @@ export default function ContactPage() {
                 actionable insights. Book a free demo with <br /> one of our
                 experts to see DAVI in action.
               </p>
-              <button className="bg-[#443DFF] text-white border p-3 rounded-lg font-bold">
+              <button className="bg-[#443DFF] text-white border p-3 rounded-lg font-bold hover:bg-blue-800 active:bg-blue-900 focus:outline-none focus:ring focus:ring-blue-400 shadow-lg">
                 Get Started
               </button>
             </div>
