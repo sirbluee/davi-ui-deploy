@@ -10,8 +10,8 @@ export default function ContactPage() {
     <>
       <div className="w-full relative scroll-smooth">
         {/* Background image */}
-        <div className="absolute w-full h-[535px]">
-          <Image className="w-full h-[535px]" src={BGImage} alt=""></Image>
+        <div className="absolute w-full h-[600px]">
+          <Image className="w-full h-[600px]" src={BGImage} alt=""></Image>
         </div>
         {/* text */}
         <div className="flex flex-col justify-center items-center relative mt-[100px] w-full">
@@ -39,7 +39,7 @@ export default function ContactPage() {
             {/* connect with us */}
             {/* get in touch */}
           </div>
-          <div className="w-[72%] m-auto grid my-20 grid-col-1 lg:grid-cols-3 lg:gap-44 md:grid-cols-1 md:gap-14 sm:grid-col-1 sm:gap-14 max-[500px]:gap-10 max-[500px]:w-[85%]">
+          <div className="w-[70%] m-auto grid my-20 grid-col-1 lg:grid-cols-3 lg:gap-44 md:grid-cols-1 md:gap-14 sm:grid-col-1 sm:gap-14 max-[500px]:gap-10 max-[500px]:w-[85%]">
             {/* schedule a demo */}
             <div className="space-y-5">
               <header className="flex  items-center text-center space-x-3">

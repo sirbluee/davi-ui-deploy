@@ -32,8 +32,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex justify-center items-center mt-[60px] max-[500px]:mt-[50px]">
-      <div className="w-[72%] relative bg-[#F3F8FF] mx-auto rounded-2xl overflow-hidden grid lg:grid-cols-2 md:grid-cols-1  max-[500px]:w-[85%] shadow-lg">
+    <div className="flex justify-center items-center mt-[120px] max-[500px]:mt-[100px]">
+      <div className="w-[70%] relative bg-[#F3F8FF] mx-auto rounded-2xl overflow-hidden grid lg:grid-cols-2 md:grid-cols-1  max-[500px]:w-[85%] shadow-lg">
         {/* <div className="w-1/2 p-16"> */}
         <div className=" p-16 max-[500px]:p-8">
           <header className="font-bold text-4xl text-[#3F4655]  max-[500px]:text-[30px]  max-[500px]:text-center">
