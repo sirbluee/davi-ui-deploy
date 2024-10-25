@@ -39,34 +39,42 @@ const Footer: React.FC = () => {
             for smarter decision-making.
           </p>
           <div className="flex space-x-4 mt-4">
-            <Image
-              src={Facebok}
-              alt="Facebook icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
-            <Image
-              src={Linkedin}
-              alt="LinkedIn icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
-            <Image
-              src={Twitter}
-              alt="Twitter icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
-            <Image
-              src={Instargram}
-              alt="Instagram icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
+            <Link href="/facebook">
+              <Image
+                src={Facebok}
+                alt="Facebook icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
+            <Link href="/linkedin">
+              <Image
+                src={Linkedin}
+                alt="LinkedIn icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
+            <Link href="/switter">
+              <Image
+                src={Twitter}
+                alt="Twitter icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
+            <Link href="/instargram">
+              <Image
+                src={Instargram}
+                alt="Instagram icon"
+                width={38}
+                height={38}
+                unoptimized
+              />{" "}
+            </Link>
           </div>
         </div>
 
@@ -74,10 +82,18 @@ const Footer: React.FC = () => {
         <div className="hidden sm:block text-left">
           <h3 className="text-xl font-bold mb-3">Our Services</h3>
           <ul className="space-y-2 text-sm">
-            <li className="pt-2">ETL</li>
-            <li className="pt-2">Data Visualization</li>
-            <li className="pt-2">Data Cleaning</li>
-            <li className="pt-2">Data Analyst</li>
+            <li className="pt-2">
+              <Link href="/service">ETL </Link>
+            </li>
+            <li className="pt-2">
+              <Link href="/service">Data Visualization </Link>
+            </li>
+            <li className="pt-2">
+              <Link href="/service">Data Cleaning </Link>
+            </li>
+            <li className="pt-2">
+              <Link href="/service">Data Analyst </Link>
+            </li>
           </ul>
         </div>
 
@@ -85,9 +101,15 @@ const Footer: React.FC = () => {
         <div className="hidden sm:block text-left">
           <h3 className="text-xl font-bold mb-3">About</h3>
           <ul className="space-y-2 text-sm">
-            <li className="pt-2">How it works</li>
-            <li className="pt-2">Member</li>
-            <li className="pt-2">Brainstorm</li>
+            <li className="pt-2">
+              <Link href="/about">How it works </Link>
+            </li>
+            <li className="pt-2">
+              <Link href="/about">Member </Link>
+            </li>
+            <li className="pt-2">
+              <Link href="/about">Brainstorm </Link>
+            </li>
           </ul>
         </div>
 
