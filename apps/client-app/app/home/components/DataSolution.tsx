@@ -51,12 +51,12 @@ export default function DataSolution() {
     <>
       <section className="py-12 bg-white">
         <div className="container mx-auto px-8 lg:px-36 text-center">
-          <h2 className="text-xl font-bold mb-8">
+          <h2 data-aos="zoom-in" className="text-xl font-bold mb-8">
             Data Solutions for Every Role in Your Organization
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left section - Content */}
-            <div className="flex flex-col overflow-y-auto h-96 pr-4 scrollbar-left">
+            <div data-aos="fade-right" className="flex flex-col overflow-y-auto h-96 pr-4 scrollbar-left">
               {Data.map((item, index) => (
                 <div
                   key={index}
@@ -95,7 +95,7 @@ export default function DataSolution() {
             </div>
 
             {/* Right section - Image */}
-            <div className="flex justify-center items-center">
+            <div data-aos="fade-left" className="flex justify-center items-center">
               <Image
                 src={DataSulutionImg}
                 alt="Data Solution"

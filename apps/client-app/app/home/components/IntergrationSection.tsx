@@ -31,7 +31,11 @@ export default function IntergrationSection() {
 
           {/* Right Side - Text and Curved Image for Desktop */}
           <div className="hidden md:flex w-full md:w-[60%] p-4 md:p-8 flex-col items-start relative">
-            <h2 className="text-6xl md:text-8xl font-medium mb-8 md:mb-16">
+            <h2
+              data-aos="fade-up-left"
+              data-aos-delay="150"
+              className="text-6xl md:text-8xl font-medium mb-8 md:mb-16"
+            >
               Integrate
               <br />
               <span className="block md:inline">
@@ -40,7 +44,11 @@ export default function IntergrationSection() {
               your data
             </h2>
 
-            <div className="relative w-full flex justify-center mb-4 md:absolute md:mt-28 md:right-1/3">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              className="relative w-full flex justify-center mb-4 md:absolute md:mt-28 md:right-1/3"
+            >
               <Image
                 src={ScanImg}
                 alt="Dashboard example"

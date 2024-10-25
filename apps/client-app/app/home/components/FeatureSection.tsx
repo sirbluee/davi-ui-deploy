@@ -56,9 +56,12 @@ export default function FeaturesSection() {
             intelligence to enhance your decision-making.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature) => (
+            {features.map((feature, i) => (
               <div
                 key={feature._id}
+                data-aos="zoom-in"
+                data-aos-delay={`${i * 150}`}
+                data-aos-anchor-placement="top-center"
                 className="relative p-6 rounded-lg border-[1px] text-left duration-200 hover:border-[0px] hover:scale-105 hover:shadow-md"
                 style={{
                   backgroundImage: `url(${feature.backgroundImage})`,

@@ -35,7 +35,10 @@ export default function DataInsightSection() {
       <div className="container mx-auto px-6 sm:px-8 lg:px-36 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Image Section */}
-          <div className="flex justify-center order-1 md:order-2">
+          <div
+            data-aos="flip-up"
+            className="flex justify-center order-1 md:order-2"
+          >
             <Image
               src={CTAImg}
               alt="CTA Image"
@@ -50,15 +53,13 @@ export default function DataInsightSection() {
             <h2 className="text-2xl font-bold mb-4">
               Unlock Powerful Data Insights Today
             </h2>
-            <ul className="flex flex-wrap justify-center md:justify-start font-medium mb-6 gap-4 text-black">
+            <ul
+              data-aos="flip-down"
+              className="flex flex-wrap justify-center md:justify-start font-medium mb-6 gap-4 text-black"
+            >
               {features.map((feature) => (
                 <li key={feature.id} className="flex items-center space-x-2">
-                  <Image
-                    src={IconTick}
-                    alt="tick"
-                    width={16}
-                    height={16}
-                  />
+                  <Image src={IconTick} alt="tick" width={16} height={16} />
                   <span>{feature.name}</span>
                 </li>
               ))}
