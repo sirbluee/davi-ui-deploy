@@ -51,19 +51,21 @@ export default function DataSolution() {
     <>
       <section className="py-12 bg-white">
         <div className="container mx-auto px-8 lg:px-36 text-center">
-          <h2 className="text-xl font-bold mb-8">
+          <h2 data-aos="zoom-in" className="text-xl font-bold mb-8">
             Data Solutions for Every Role in Your Organization
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left section - Content */}
-            <div className="flex flex-col overflow-y-auto h-96 pr-4 scrollbar-left">
+            <div data-aos="fade-right" className="flex flex-col overflow-y-auto h-96 pr-4 scrollbar-left">
               {Data.map((item, index) => (
                 <div
                   key={index}
                   className="relative flex flex-col items-start p-4 rounded transition-all duration-300 ease-in-out"
                 >
                   <h1 className="text-[25px] text-left mb-2">{item.title}</h1>
-                  <h2 className="mb-1 font-semibold text-left">{item.subtitle}</h2>
+                  <h2 className="mb-1 font-semibold text-left">
+                    {item.subtitle}
+                  </h2>
 
                   {/* Smooth transition for expanding/collapsing description */}
                   <div

@@ -69,8 +69,8 @@ export default function ServiceSection() {
         />
         <h2 className="text-xl font-bold mb-8">Our Services</h2>
         <p className="text-[#9593A1] text-sm font-medium mb-12">
-          Explore the comprehensive solutions DAVI offers to help you<br/> analyze,
-          visualize, and optimize your data.
+          Explore the comprehensive solutions DAVI offers to help you
+          <br /> analyze, visualize, and optimize your data.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
@@ -79,7 +79,8 @@ export default function ServiceSection() {
               className="bg-white p-4 rounded-2xl hover:shadow-xl border-[1.5px] border-[#E6EDFF] text-left duration-200 hover:scale-105"
             >
               {service.icon && (
-                <Image unoptimized={true}
+                <Image
+                  unoptimized={true}
                   src={service.icon}
                   alt={`${service.title} Icon`}
                   width={40}
@@ -92,7 +93,8 @@ export default function ServiceSection() {
             </div>
           ))}
         </div>
-        <Image unoptimized
+        <Image
+          unoptimized
           src={Pattern}
           alt="pattern"
           width={80}

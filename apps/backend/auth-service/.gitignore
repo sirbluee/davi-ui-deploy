@@ -1,5 +1,5 @@
 /node_modules
 build
-
+.DS_Store
 src/configs/.env.development
 src/configs/.env.production

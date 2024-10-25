@@ -1,3 +1,4 @@
+"use client";
 import HeroSection from "@/app/home/components/HeroSection";
 import FeaturesSection from "@/app/home/components/FeatureSection";
 import SolutionSection from "@/app/home/components/SolutionSection";
@@ -7,6 +8,7 @@ import DataInsightSection from "@/app/home/components/DataInsightSection";
 import CTASection from "@/app/home/components/CTASection";
 
 import DataSolution from "./components/DataSolution";
+import Qoute from "./components/Qoute";
 
 export default function HomePage() {
   return (
@@ -16,6 +18,8 @@ export default function HomePage() {
 
       {/* Features Section */}
       <FeaturesSection />
+
+      <Qoute/>
 
       {/* Solutions Section */}
       <SolutionSection />
@@ -31,7 +35,7 @@ export default function HomePage() {
 
       {/* Data Solution */}
       <DataSolution />
-      
+
       {/* CTA Section */}
       <CTASection />
 

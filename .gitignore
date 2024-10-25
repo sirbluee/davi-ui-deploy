@@ -3,6 +3,7 @@ yarn.lock
 .npmrc
 .yarnrc.yml
 _TOKEN
+.DS_Store
 # Logs
 logs
 *.log
