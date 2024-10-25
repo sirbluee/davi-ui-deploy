@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useCallback } from "react";
 import { mockData } from "@/app/about/mockData";
 import BrainStormCard from "@/app/about/components/brainStomCard";

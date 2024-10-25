@@ -1,10 +1,12 @@
+"use client";
+
 import React from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion"; // Import framer-motion for animations
 
 import bg_animation from "@/public/images/about/background/processing-data.gif";
-import about_animations from "@/public/images/about/about_animations.gif";
+import about_image_1 from "@/public/images/about/about_image_1.png";
 
 import { features_1 } from "@/app/about/mockData";
 import FeatureCard from "@/app/about/components/FeaturesListCard";
@@ -36,8 +38,8 @@ export const Solutions = () => {
         viewport={{ once: false, amount: 0.3 }} // Replay animation on scroll back
       >
         <Image
-          src={about_animations}
-          alt="about_animations"
+          src={about_image_1}
+          alt="about_image_1"
           width={600}
           height={400}
           className="rounded-lg"
