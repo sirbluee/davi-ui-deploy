@@ -4,7 +4,7 @@ import React from "react";
 export default function CTASection() {
   return (
     <>
-      <section className="">
+      <section>
         <div className="relative scroll-parallax ">
           <div className="flex z-50 flex-col items-center justify-center text-white py-16 space-y-8 bg-memey ">
             {/* Header */}

@@ -11,6 +11,8 @@
   "dependencies": {
     "@react-three/fiber": "^8.17.10",
     "@tabler/icons-react": "^3.20.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "@types/react-icons": "^3.0.0",
     "@types/three": "^0.169.0",
     "clsx": "^2.1.1",

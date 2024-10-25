@@ -1,3 +1,4 @@
+"use client";
 import HeroSection from "@/app/home/components/HeroSection";
 import FeaturesSection from "@/app/home/components/FeatureSection";
 import SolutionSection from "@/app/home/components/SolutionSection";
@@ -31,7 +32,7 @@ export default function HomePage() {
 
       {/* Data Solution */}
       <DataSolution />
-      
+
       {/* CTA Section */}
       <CTASection />
 
