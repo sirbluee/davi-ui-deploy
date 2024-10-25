@@ -10,7 +10,7 @@ export default function Qoute() {
         }}
       >
         <div className="px-6 sm:px-8 lg:px-36 text-center relative bg-blue-900 h-full flex justify-center items-center bg-opacity-20">
-          {/* Section quote */}
+          {/* Section quote test*/}
           <div className="relative bg-cover bg-center bg-no-repeat qoute">
             <div className="relative z-10 flex flex-col items-center justify-center text-center w-auto h-full">
               <h2 className="leading-loose md:mx-[150px] text-white sm:text-[18px] md:text-3xl lg:text-4xl font-bold justify-center items-center">
