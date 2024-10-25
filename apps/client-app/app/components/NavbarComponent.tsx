@@ -144,7 +144,7 @@ export default function NavbarComponent() {
             Home
           </Link>
           <Link
-            href="/services"
+            href="/service"
             className="text-white hover:text-gray-200 font-medium"
             onClick={() => setIsMenuOpen(false)}
           >

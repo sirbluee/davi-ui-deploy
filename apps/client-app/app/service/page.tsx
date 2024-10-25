@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import Image from "next/image"; // Import Next.js Image component
-import bgBanner from "/public/images/services/bg-banner.png";
+import bgBanner from "/public/images/services/bg-Banner.png";
 import what from "/public/images/services/what.gif";
 import d1 from "/public/images/services/d1.png";
 import d2 from "/public/images/services/d2.png";
