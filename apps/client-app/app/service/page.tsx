@@ -7,6 +7,17 @@ import what from "/public/images/services/what.gif";
 import d1 from "/public/images/services/d1.png";
 import d2 from "/public/images/services/d2.png";
 import BannerImage from "/public/images/services/servicesection.png";
+import a1 from "/public/images/services/1.gif";
+import a2 from "/public/images/services/2.gif";
+import a3 from "/public/images/services/3.gif";
+import a4 from "/public/images/services/4.gif";
+import a5 from "/public/images/services/5.gif";
+import etl from "/public/images/services/etl.gif";
+import srcc from "/public/images/services/srcc.gif";
+import clean from "/public/images/services/clean.gif";
+import analysis from "/public/images/services/analysis.gif";
+import visualize from "/public/images/services/visualize.gif";
+import custom from "/public/images/services/custom.gif";
 
 export default function Service() {
   const categories = [
@@ -33,9 +44,9 @@ export default function Service() {
   const steps = [
     {
       icon: (
-        <img
-          src="/images/services/1.gif" // Correct image path
-          alt="Data Analysis Illustration"
+        <Image
+          src={a1} // Ensure you use the actual image path
+          alt="Data Solutions Illustration"
           className="w-full h-auto"
         />
       ),
@@ -45,21 +56,21 @@ export default function Service() {
     },
     {
       icon: (
-        <img
-          src="/images/services/3.gif" // Correct image path
-          alt="Data Analysis Illustration"
+        <Image
+          src={a2}
+          alt="Data Solutions Illustration"
           className="w-full h-auto"
         />
       ),
-      title: "Prepare & Clean Data",
+      title: "Clean Data",
       description:
         "Clean and transform data effortlessly to ensure quality for analysis.",
     },
     {
       icon: (
-        <img
-          src="/images/services/2.gif" // Correct image path
-          alt="Data Analysis Illustration"
+        <Image
+          src={a3}
+          alt="Data Solutions Illustration"
           className="w-full h-auto"
         />
       ),
@@ -69,9 +80,9 @@ export default function Service() {
     },
     {
       icon: (
-        <img
-          src="/images/services/4.gif" // Correct image path
-          alt="Data Analysis Illustration"
+        <Image
+          src={a4}
+          alt="Data Solutions Illustration"
           className="w-full h-auto"
         />
       ),
@@ -81,9 +92,9 @@ export default function Service() {
     },
     {
       icon: (
-        <img
-          src="/images/services/5.gif" // Correct image path
-          alt="Data Analysis Illustration"
+        <Image
+          src={a5}
+          alt="Data Solutions Illustration"
           className="w-full h-auto"
         />
       ),
@@ -108,10 +119,11 @@ export default function Service() {
           {/* Text Content */}
           <div className="md:w-1/2 text-left">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-            Our Services
+              Our Services
             </h2>
             <p className="text-base sm:text-lg leading-relaxed w-full sm:pr-10 sm:w-full">
-            Explore our comprehensive data services designed to help you analyze, visualize, and optimize your data.
+              Explore our comprehensive data services designed to help you
+              analyze, visualize, and optimize your data.
             </p>
           </div>
 
@@ -129,28 +141,22 @@ export default function Service() {
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      <section className="container mx-auto py-20 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-36 flex flex-col md:flex-row items-center bg-white ">
         <div className="container mx-auto text-center">
-          <h2
-            className="text-3xl font-bold mb-10 md:px-0"
-            style={{ paddingLeft: "15px", paddingRight: "15px" }}
-          >
+          <h2 className="text-3xl font-bold mb-10 md:px-0">
             Getting Started with <span className="text-blue-600">DAVI</span>
           </h2>
 
           {/* Desktop Step Progress Bar */}
-          <div className="hidden md:flex justify-center my-8">
+          <div className="hidden md:flex justify-center my-8 mx-[200pxx]">
             <div className="flex items-center space-x-6">
               {steps.map((_, index) => (
                 <React.Fragment key={index}>
-                  {/* Numbered Step */}
                   <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500 text-white text-lg font-semibold">
                     {index + 1}
                   </div>
-
-                  {/* Line between steps, except for the last one */}
                   {index < steps.length - 1 && (
-                    <div className="w-[260px] h-1 bg-blue-500"></div>
+                    <div className="w-[200px] h-1 bg-blue-500"></div>
                   )}
                 </React.Fragment>
               ))}
@@ -158,21 +164,16 @@ export default function Service() {
           </div>
 
           {/* Cards on Desktop */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center px-4">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center px-2">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center bg-gray-100 rounded-lg shadow-lg p-6"
+                className="flex flex-col items-center bg-gray-100 rounded-lg shadow-lg p-4"
               >
-                {/* Step Icon */}
                 {step.icon}
-
-                {/* Step Title */}
                 <h3 className="text-xl font-semibold mb-2 text-blue-900">
                   {step.title}
                 </h3>
-
-                {/* Step Description */}
                 <p className="text-gray-600 text-sm">{step.description}</p>
               </div>
             ))}
@@ -251,59 +252,59 @@ export default function Service() {
       </section>
 
       <div className="relative w-full flex lg:px-[400px] ">
-      {/* Navigation Bar */}
-      <nav className="w-full flex mx-auto p-2 space-x-8 rounded-md justify-start lg:justify-center mt-14 overflow-hidden bg-white relative">
-        <div
-          className="flex w-full overflow-auto whitespace-nowrap scrollbar-hide"
-          ref={scrollContainerRef} // Attach the ref here
-        >
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              className={`px-8 py-2 rounded-md ${
-                activeCategory === category.id
-                  ? "bg-blue-500 text-white"
-                  : "bg-white text-blue-500 hover:bg-blue-100"
-              }`}
-              onClick={() => setActiveCategory(category.id)}
-            >
-              {category.label}
-            </button>
-          ))}
-        </div>
-        {/* Right arrow indicator with scroll functionality */}
-        <div
-          className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent flex items-center justify-center cursor-pointer"
-          onClick={scrollRight}
-        >
-          <svg
-            className="w-5 h-5 text-blue-500"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
+        {/* Navigation Bar */}
+        <nav className="w-full flex mx-auto p-2 space-x-8 rounded-md justify-start lg:justify-center mt-14 overflow-hidden bg-white relative">
+          <div
+            className="flex w-full overflow-auto whitespace-nowrap scrollbar-hide"
+            ref={scrollContainerRef} // Attach the ref here
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            ></path>
-          </svg>
-        </div>
-      </nav>
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                className={`px-8 py-2 rounded-md ${
+                  activeCategory === category.id
+                    ? "bg-blue-500 text-white"
+                    : "bg-white text-blue-500 hover:bg-blue-100"
+                }`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                {category.label}
+              </button>
+            ))}
+          </div>
+          {/* Right arrow indicator with scroll functionality */}
+          <div
+            className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent flex items-center justify-center cursor-pointer"
+            onClick={scrollRight}
+          >
+            <svg
+              className="w-5 h-5 text-blue-500"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </div>
+        </nav>
 
-      {/* Add styles for hiding the scrollbar in the nav */}
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
-    </div>
+        {/* Add styles for hiding the scrollbar in the nav */}
+        <style jsx>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
+      </div>
 
       {/* Content Area */}
       <div className="mt-8 w-full max-w-6xl mx-auto mb-16">
@@ -356,8 +357,8 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-8">
-              <img
-                src="/images/services/etl.gif"
+              <Image
+                src={etl}
                 alt="ETL Process Illustration"
                 className="w-full h-auto"
               />
@@ -403,9 +404,9 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-              <img
-                src="/images/services/srcc.gif"
-                alt="Data Source Integration Illustration"
+            <Image
+                src={srcc}
+                alt="ETL Process Illustration"
                 className="w-full h-auto"
               />
             </div>
@@ -459,9 +460,9 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-              <img
-                src="/images/services/clean.gif"
-                alt="Data Cleaning Illustration"
+            <Image
+                src={clean}
+                alt="ETL Process Illustration"
                 className="w-full h-auto"
               />
             </div>
@@ -516,9 +517,9 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-              <img
-                src="/images/services/analysis.gif"
-                alt="Data Analysis Illustration"
+            <Image
+                src={analysis}
+                alt="ETL Process Illustration"
                 className="w-full h-auto"
               />
             </div>
@@ -571,9 +572,9 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-              <img
-                src="/images/services/visualize.gif"
-                alt="Data Visualization Illustration"
+            <Image
+                src={visualize}
+                alt="ETL Process Illustration"
                 className="w-full h-auto"
               />
             </div>
@@ -630,9 +631,9 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-              <img
-                src="/images/services/custom.gif"
-                alt="Data Visualization Illustration"
+            <Image
+                src={custom}
+                alt="ETL Process Illustration"
                 className="w-full h-auto"
               />
             </div>
