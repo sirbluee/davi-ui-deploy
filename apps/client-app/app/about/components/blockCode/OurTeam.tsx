@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { TeamMemberCard } from "../TeamMemberCard";
-import { teamMembers } from "../../mockData";
+import { TeamMemberCard } from "@/app/about/components/TeamMemberCard";
+import { teamMembers } from "@/app/about/mockData";
 import bgTeam from "@/public/images/about/background/bgteam.png";
 export const OurTeam = () => {
   return (

@@ -5,6 +5,13 @@ import scrollIcon from "@/public/images/contact/images/scroll.svg";
 import messageIcon from "@/public/images/contact/images/message-2.svg";
 import callIcon from "@/public/images/contact/images/call.svg";
 import ContactForm from "./components/form";
+
+export const metadata = {
+  title: "DAVI | Contact-Us",
+  description: "Get in touch with the DAVI team. We're here to assist you with any inquiries or support requests.",
+  keywords: ["Contact Us", "Customer Support", "Inquiries", "Support"],
+};
+
 export default function ContactPage() {
   return (
     <>
