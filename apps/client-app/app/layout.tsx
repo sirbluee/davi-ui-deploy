@@ -5,6 +5,8 @@ import { inter } from "./fonts";
 import NavbarComponent from "./components/NavbarComponent";
 import { usePathname } from "next/navigation";
 import { disableNavWithFooter } from "./utils/disableNavWithFooter";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export default function RootLayout({
   children,
@@ -21,7 +23,7 @@ export default function RootLayout({
         <header className="w-full z-50 fixed top-0 start-0">
           {!disableNavWithFooter.includes(path) && <NavbarComponent />}
         </header>
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         <footer>{!disableNavWithFooter.includes(path) && <Footer />}</footer>
       </body>
     </html>
