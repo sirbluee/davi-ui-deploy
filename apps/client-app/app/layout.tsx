@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from "./components/FooterComponent";
+import { inter } from "./fonts";
+import NavbarComponent from "./components/NavbarComponent";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,11 +15,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <body
-        className="h-screen flex flex-col justify-between"
+        className={`h-screen flex flex-col justify-between bg-white ${inter.variable}`}
       >
+        <header>
+          <NavbarComponent />
+        </header>
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   );
