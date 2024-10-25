@@ -13,22 +13,22 @@ const BrainStormCard: React.FC<BrainStormCardProps> = ({
   icon,
   title,
   description,
-  descriptionColor = "text-gray-600", // Default color if not provided
+  descriptionColor = "text-gray-300", // Default color if not provided
 }) => {
   return (
     <CardSpotlight className="text-black hover:text-white">
       <div className="w-full lg:h-[280px] flex flex-col space-y-3 items-center justify-start transition-transform transform hover:scale-105 duration-300 ease-in-out h-full">
-        <div className="overflow-hidden transition-all duration-300 ease-in-out">
+        <div className="overflow-hidden text-black transition-all duration-300 ease-in-out">
           <Image
             src={icon}
             alt={`Icon for ${title}`}
             width={100}
             height={100}
             priority={true}
-            className="object-cover transition-transform duration-300 ease-in-out border-2 border-blue-200 hover:border-blue-500 rounded-full"
+            className="object-cover transition-transform duration-300 ease-in-out border-2 border-blue-500 hover:border-slate-100 rounded-full"
           />
         </div>
-        <h1 className="text-xl font-bold transition-colors duration-300 ease-in-out hover:text-blue-600">
+        <h1 className="text-xl font-bold text-white bg-clip-text hover:text-slate-100">
           {title}
         </h1>
         <p
