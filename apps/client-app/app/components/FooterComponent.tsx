@@ -38,51 +38,74 @@ const Footer: React.FC = () => {
             for smarter decision-making.
           </p>
           <div className="flex justify-start space-x-4 mt-4">
-            <Image
-              src={Facebok}
-              alt="Facebook icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
-            <Image
-              src={Linkedin}
-              alt="LinkedIn icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
-            <Image
-              src={Twitter}
-              alt="Twitter icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
-            <Image
-              src={Instargram}
-              alt="Instagram icon"
-              width={38}
-              height={38}
-              unoptimized
-            />
+            <Link href="/order/etl">
+              <Image
+                src={Facebok}
+                alt="Facebook icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
+            <Link href="/order/etl">
+              <Image
+                src={Linkedin}
+                alt="LinkedIn icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
+            <Link href="/order/etl">
+              <Image
+                src={Twitter}
+                alt="Twitter icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
+            <Link href="/order/etl">
+              <Image
+                src={Instargram}
+                alt="Instagram icon"
+                width={38}
+                height={38}
+                unoptimized
+              />
+            </Link>
           </div>
         </div>
         <div className="hidden sm:block">
           <h3 className="text-xl font-bold mb-3">Our Services</h3>
           <ul className="space-y-2 text-sm">
-            <li className="pt-4"> <Link href="/order/etl">ETL</Link></li>
-            <li className="pt-4"><Link href="/order/etl">Data Visualization</Link></li>
-            <li className="pt-4"><Link href="/order/etl">Data Cleaning</Link></li>
-            <li className="pt-4"><Link href="/order/etl">Data Analyst</Link></li>
+            <li className="pt-4">
+              {" "}
+              <Link href="/service">ETL</Link>
+            </li>
+            <li className="pt-4">
+              <Link href="/service">Data Visualization</Link>
+            </li>
+            <li className="pt-4">
+              <Link href="/service">Data Cleaning</Link>
+            </li>
+            <li className="pt-4">
+              <Link href="/service">Data Analyst</Link>
+            </li>
           </ul>
         </div>
         <div className="hidden sm:block lg:text-left">
           <h3 className="text-xl font-bold mb-3">About</h3>
           <ul className="space-y-2 text-sm">
-            <li className="pt-4"><Link href="/order/etl">How it works</Link></li>
-            <li className="pt-4"><Link href="/order/etl">Member</Link></li>
-            <li className="pt-4"><Link href="/order/etl">Brainstorm</Link></li>
+            <li className="pt-4">
+              <Link href="/about">How it works</Link>
+            </li>
+            <li className="pt-4">
+              <Link href="/about">Member</Link>
+            </li>
+            <li className="pt-4">
+              <Link href="/about">Brainstorm</Link>
+            </li>
           </ul>
         </div>
 
