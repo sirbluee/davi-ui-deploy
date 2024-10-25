@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BGImage from "@/public/images/contact/images/background2.png";
+import BGImage from "@/public/images/contact/images/bg-Banner.png";
 // import ilustration from "@/public/images/contact/images/image 20.svg";
 import scrollIcon from "@/public/images/contact/images/scroll.svg";
 import messageIcon from "@/public/images/contact/images/message-2.svg";
