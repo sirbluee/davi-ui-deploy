@@ -54,7 +54,7 @@ export default function ContactForm() {
               />
             </div>
 
-            {/* email */}
+            {/* Email address*/}
             <div className="flex flex-col">
               <input
                 type="text"
