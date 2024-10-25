@@ -9,14 +9,15 @@ export default function Qoute() {
           backgroundPosition: "center left",
         }}
       >
-        <div className="container mx-auto px-6 sm:px-8 lg:px-36 text-center mb-10 relative">
+        <div className="px-6 sm:px-8 lg:px-36 text-center relative bg-blue-900 h-full flex justify-center items-center bg-opacity-20">
           {/* Section quote */}
           <div className="relative bg-cover bg-center bg-no-repeat qoute">
-            <div className="relative z-10 flex flex-col items-center justify-center text-center h-full">
-              <h1 className="text-white sm:text-[18px] md:text-3xl lg:text-4xl font-bold justify-center items-center">
-                Seamlessly integrate your data with DAVI, and unlock the true
+            <div className="relative z-10 flex flex-col items-center justify-center text-center w-auto h-full">
+              <h2 className="leading-loose md:mx-[150px] text-white sm:text-[18px] md:text-3xl lg:text-4xl font-bold justify-center items-center">
+                Seamlessly integrate your data with{" "}
+                <span className="text-blue-700">DAVI</span>, and unlock the true
                 potential of real-time insights for smarter decision-making.
-              </h1>
+              </h2>
               <button className="mt-6 bg-[#443DFF] text-white font-semibold py-3 px-8 rounded-lg hover:bg-purple-700 transition">
                 Get Started
               </button>
