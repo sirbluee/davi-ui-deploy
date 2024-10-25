@@ -106,7 +106,7 @@ const ContactForm = ({}) => {
               )}
             </div>
 
-            {/* Email */}
+            {/* Email address*/}
             <div className="flex flex-col">
               <input
                 type="email"
