@@ -2,7 +2,7 @@ export default function Qoute() {
   return (
     <>
       <section
-        className="h-96"
+        className=" flex justify-between items-center h-[400px] lg:h-[800px]"
         style={{
           backgroundImage: `url('/images/home/UI_Curves.gif')`,
           backgroundSize: "cover",
@@ -13,7 +13,7 @@ export default function Qoute() {
           {/* Section quote */}
           <div className="relative bg-cover bg-center bg-no-repeat qoute">
             <div className="relative z-10 flex flex-col items-center justify-center text-center h-full">
-              <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mt-20">
+              <h1 className="text-white sm:text-[18px] md:text-3xl lg:text-4xl font-bold justify-center items-center">
                 Seamlessly integrate your data with DAVI, and unlock the true
                 potential of real-time insights for smarter decision-making.
               </h1>
