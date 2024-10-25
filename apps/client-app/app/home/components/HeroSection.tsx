@@ -22,8 +22,6 @@ export default function HeroSection() {
         {/* Hero Text and Content */}
         <div className="container mx-auto px-8 lg:px-36 relative z-10 flex flex-col items-start justify-center h-full">
           <h1
-            data-aos="fade-right"
-            data-aos-delay="150"
             className="text-5xl font-bold mt-14 mb-4 leading-[56px]"
           >
             Unlock the
@@ -33,8 +31,6 @@ export default function HeroSection() {
             <span className="text-[#407BFF] font-bold-900">DAVI</span>
           </h1>
           <p
-            data-aos="fade-up"
-            data-aos-delay="300"
             className="text-lg mb-10 leading-relaxed"
           >
             An all-in-one platform for data analysis, visualization, and
@@ -46,8 +42,6 @@ export default function HeroSection() {
           {/* Link wrapping span with AOS */}
           <Link href="/get-started">
             <span
-              data-aos="zoom-in"
-              data-aos-delay="450"
               className="bg-[#443DFF] text-white text-base font-bold py-3 px-8 rounded-lg hover:bg-blue-700"
             >
               Get Started

@@ -73,12 +73,9 @@ export default function ServiceSection() {
           <br /> analyze, visualize, and optimize your data.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, i) => (
+          {services.map((service) => (
             <div
               key={service.id}
-              data-aos="fade-left"
-              data-aos-delay={`${i * 150}`}
-              data-aos-anchor-placement="top-center"
               className="bg-white p-4 rounded-2xl hover:shadow-xl border-[1.5px] border-[#E6EDFF] text-left duration-200 hover:scale-105"
             >
               {service.icon && (

@@ -10,7 +10,7 @@ export default function SolutionSection() {
       <section className="py-16 bg-[#F5F5F5]">
         <div className="container mx-auto flex flex-col md:flex-row items-center px-6 lg:px-36 gap-12">
           {/* Left Side - Image */}
-          <div data-aos="fade-right" data-aos-delay="150" className="w-full md:w-[60%]">
+          <div className="w-full md:w-[60%]">
             <Image
               src={SolutionImg} // Ensure this path is correct
               alt="Solution Image"
@@ -21,7 +21,7 @@ export default function SolutionSection() {
           </div>
 
           {/* Right Side - Content */}
-          <div data-aos="fade-left" data-aos-delay="300" className="w-full md:w-[40%] relative">
+          <div className="w-full md:w-[40%] relative">
             <h2 className="text-2xl font-bold mb-3">
               Solutions for Your Large
               <br /> Enterprise

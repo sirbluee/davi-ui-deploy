@@ -36,7 +36,6 @@ export default function DataInsightSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
           {/* Image Section */}
           <div
-            data-aos="flip-up"
             className="flex justify-center order-1 md:order-2"
           >
             <Image

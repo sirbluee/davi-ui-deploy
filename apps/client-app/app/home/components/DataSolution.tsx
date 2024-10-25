@@ -95,7 +95,7 @@ export default function DataSolution() {
             </div>
 
             {/* Right section - Image */}
-            <div data-aos="fade-left" className="flex justify-center items-center">
+            <div className="flex justify-center items-center">
               <Image
                 src={DataSulutionImg}
                 alt="Data Solution"
