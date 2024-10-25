@@ -54,16 +54,16 @@ export default function DataSolution() {
           <h2 className="text-xl font-bold mb-8">
             Data Solutions for Every Role in Your Organization
           </h2>
-          <div className="flex justify-between">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Left section - Content */}
-            <div className="flex flex-col w-1/2 overflow-y-auto h-96 pr-4 scrollbar-left">
+            <div className="flex flex-col overflow-y-auto h-96 pr-4 scrollbar-left">
               {Data.map((item, index) => (
                 <div
                   key={index}
                   className="relative flex flex-col items-start p-4 rounded transition-all duration-300 ease-in-out"
                 >
-                  <h1 className="text-[25px] mb-2">{item.title}</h1>
-                  <h2 className="mb-1 font-semibold">{item.subtitle}</h2>
+                  <h1 className="text-[25px] text-left mb-2">{item.title}</h1>
+                  <h2 className="mb-1 font-semibold text-left">{item.subtitle}</h2>
 
                   {/* Smooth transition for expanding/collapsing description */}
                   <div
@@ -95,7 +95,7 @@ export default function DataSolution() {
             </div>
 
             {/* Right section - Image */}
-            <div className="bg-blue-100">
+            <div className="flex justify-center items-center">
               <Image
                 src={DataSulutionImg}
                 alt="Data Solution"
