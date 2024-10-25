@@ -4,15 +4,13 @@ import Image from "next/image";
 import ilustration from "@/public/images/contact/images/image 20.svg";
 import emailjs from "@emailjs/browser";
 
-interface Props {}
-
 const initContactForm = {
   Username: "",
   email: "",
   comment: "",
 };
 
-const ContactForm: React.FC<Props> = ({}) => {
+const ContactForm = ({}) => {
   const form = useRef<HTMLFormElement>(null);
   const [user, setUser] = useState(initContactForm);
   const [errors, setErrors] = useState({
