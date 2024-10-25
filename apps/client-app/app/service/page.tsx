@@ -200,12 +200,12 @@ export default function Service() {
             {/* Text for Desktop and Mobile */}
             <p className="inline-block text-lg md:text-2xl font-semibold px-4">
               <span className="block md:hidden">
-                Unlock powerful insights with DAVI's data solutions, designed
-                for mobile!
+                {`Unlock powerful insights with DAVI's data solutions, designed
+                for mobile!`}
               </span>
               <span className="hidden md:block">
-                At DAVI, we unlock unique patterns in your data, enabling
-                precise, data-driven business decisions.
+                {`At DAVI, we unlock unique patterns in your data, enabling
+                precise, data-driven business decisions.`}
               </span>
             </p>
 
@@ -236,14 +236,15 @@ export default function Service() {
         {/* Right Section - Text Content */}
         <div className="md:w-1/2 text-center md:text-left mt-8 md:mt-0">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Why <span className="text-blue-600">DAVI</span>'s Data Solutions
-            Stand Out
+            Why <span className="text-blue-600">DAVI</span>
+            {`'s Data Solutions
+            Stand Out`}
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            As a fully tailored, scalable, and high-performance ETL service
+            {` As a fully tailored, scalable, and high-performance ETL service
             provider, we serve the unique needs of your business. With a focus
             on delivering quality ETL services and actionable insights, here's
-            why DAVI is the best choice for your data transformation journey.
+            why DAVI is the best choice for your data transformation journey.`}
           </p>
           <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
             Learn More
@@ -385,8 +386,8 @@ export default function Service() {
                       Upload Flexibility
                     </h3>
                     <p className="text-sm text-gray-500">
-                      Whether you're working with CSVs, Excel files, or JSON
-                      formats, DAVI supports all common file types.
+                      {`Whether you're working with CSVs, Excel files, or JSON
+                      formats, DAVI supports all common file types.`}
                     </p>
                   </div>
                 </div>
@@ -404,7 +405,7 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-            <Image
+              <Image
                 src={srcc}
                 alt="ETL Process Illustration"
                 className="w-full h-auto"
@@ -460,7 +461,7 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-            <Image
+              <Image
                 src={clean}
                 alt="ETL Process Illustration"
                 className="w-full h-auto"
@@ -517,7 +518,7 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-            <Image
+              <Image
                 src={analysis}
                 alt="ETL Process Illustration"
                 className="w-full h-auto"
@@ -572,7 +573,7 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-            <Image
+              <Image
                 src={visualize}
                 alt="ETL Process Illustration"
                 className="w-full h-auto"
@@ -631,7 +632,7 @@ export default function Service() {
               </div>
             </div>
             <div className="w-full md:w-1/2 p-12">
-            <Image
+              <Image
                 src={custom}
                 alt="ETL Process Illustration"
                 className="w-full h-auto"
