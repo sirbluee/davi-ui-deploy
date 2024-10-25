@@ -63,7 +63,9 @@ export default function DataSolution() {
                   className="relative flex flex-col items-start p-4 rounded transition-all duration-300 ease-in-out"
                 >
                   <h1 className="text-[25px] text-left mb-2">{item.title}</h1>
-                  <h2 className="mb-1 font-semibold text-left">{item.subtitle}</h2>
+                  <h2 className="mb-1 font-semibold text-left">
+                    {item.subtitle}
+                  </h2>
 
                   {/* Smooth transition for expanding/collapsing description */}
                   <div
