@@ -184,7 +184,7 @@ export default function Service() {
       {/* Quotation Section */}
       <section
         className="w-full h-[600px] bg-cover bg-blue-700 bg-center relative"
-        style={{ backgroundImage: `url('/images/services/data.gif')` }} // Correct background path
+        style={{ backgroundImage: `url('/images/services/Data.gif')` }} // Correct background path
       >
         <div className="flex items-center justify-center h-full bg-black bg-opacity-50">
           <div className="flex flex-col md:flex-row items-center text-center text-white px-4 max-w-3xl">
