@@ -7,17 +7,17 @@ import bgBanner from "@/public/images/about/background/bg-Banner.png";
 export const HeroSection = () => {
   return (
     <section
-      className="relative text-white text-left h-auto md:h-[600px] w-full"
+      className="relative text-white text-left px-9 pt-10 h-auto md:h-[600px] w-full"
       style={{
         backgroundImage: `url(${bgBanner.src})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="container mx-auto py-20 px-4 sm:px-8 md:px-12 lg:px-24 xl:px-36 flex flex-col md:flex-row items-center">
+      <div className="container mx-auto py-20 sm:px-8 md:px-12 lg:px-24 xl:px-36 flex flex-col md:flex-row items-center">
         {/* Text Content */}
         <div className="md:w-1/2 text-left">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-5xl sm:text-3xl lg:text-4xl font-bold mb-4">
             About DAVI
           </h2>
           <p className="text-base sm:text-lg leading-relaxed w-full sm:pr-10 sm:w-full">

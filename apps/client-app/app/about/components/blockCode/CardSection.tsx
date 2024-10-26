@@ -29,7 +29,7 @@ export const CardSection = () => {
   }, [handleScroll]); // Now using `handleScroll` as a dependency
 
   return (
-    <div className="md:absolute md:top-[43%] transform -translate-y-1/2 w-full justify-center z-10 sm:px-8 md:px-[15%] lg:px-2 xl:px-36">
+    <div className="md:absolute md:top-[43%] md:transform md:-translate-y-1/2 w-full justify-center z-10 sm:px-5 py-3 px-9 md:px-[15%] lg:px-2 xl:px-36">
       <div className="flex flex-wrap justify-center gap-y-4 sm:gap-4 md:gap-6">
         {mockData.map((item, index) => (
           <motion.div
