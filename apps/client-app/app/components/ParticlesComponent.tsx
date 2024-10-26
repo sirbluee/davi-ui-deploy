@@ -68,7 +68,7 @@ const ParticlesComponent: React.FC<ParticlesComponentProps> = (props) => {
             enable: true,
           },
           move: {
-            direction: "right", // Particles move left to right
+            direction: "none", // Particles move left to right
             enable: true,
             outModes: {
               default: "out", // Ensures particles leave the screen instead of bouncing back
