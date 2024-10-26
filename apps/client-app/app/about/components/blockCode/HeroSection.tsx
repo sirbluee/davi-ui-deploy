@@ -1,7 +1,5 @@
-import Image from "next/image";
 import React from "react";
 
-import BannerImage from "@/public/images/about/aboutSection.png";
 import bgBanner from "@/public/images/about/background/bg-Banner.png";
 import DataExtractionIllustration from "../atoms/DataExtractionIllustration";
 
