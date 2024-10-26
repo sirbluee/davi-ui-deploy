@@ -3,6 +3,7 @@ import React from "react";
 
 import BannerImage from "@/public/images/about/aboutSection.png";
 import bgBanner from "@/public/images/about/background/bg-Banner.png";
+import DataExtractionIllustration from "../atoms/DataExtractionIllustration";
 
 export const HeroSection = () => {
   return (
@@ -30,15 +31,8 @@ export const HeroSection = () => {
         </div>
 
         {/* Image */}
-        <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
-          <Image
-            width={500}
-            height={500}
-            alt="Our Services"
-            unoptimized={true}
-            src={BannerImage}
-            className="w-full max-w-[570px] h-auto"
-          />
+        <div className="px-16 md:px-0 md:w-1/2 mt-10 md:mt-0 flex justify-center">
+          <DataExtractionIllustration />
         </div>
       </div>
     </section>
