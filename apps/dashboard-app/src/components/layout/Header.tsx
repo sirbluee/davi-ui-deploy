@@ -1,12 +1,14 @@
 import React from "react";
-import Logo from "../../../public/images/header/logo.png";
-import ProfileUser from "../../../public/images/header";
+import Logo from "@/public/images/header/logo.png";
+import ProfileUser from "@/public/images/header/roem-reaksmey.jpeg";
 
 const Header: React.FC = () => {
   return (
     <header className="bg-white shadow-md flex items-center justify-between p-4 px-8 relative">
-      <div className="flex items-center">
-        <img src={Logo} alt="Logo" className="h-8 w-auto mr-4" />
+      <div className="flex items-center cursor-pointer">
+        <a href="/">
+          <img src={Logo} alt="Logo" className="h-8 w-auto mr-4" />{" "}
+        </a>
       </div>
       <div className="flex items-center">
         <button className="relative mr-6">
@@ -27,13 +29,27 @@ const Header: React.FC = () => {
           {/* Notification badge */}
           <span className="absolute -top-0 -right-[1px] inline-flex items-center justify-center w-[6px] h-[6px] text-xs font-bold leading-none text-white bg-red-600 rounded-full"></span>
         </button>
-        <div className="flex flex-row gap-2">
+        <div className="flex items-center justify-center flex-row gap-3 cursor-pointer">
           <img
             src={ProfileUser}
             alt="Profile"
-            className="h-8 w-8 rounded-full"
+            className="size-8 rounded-full"
           />
-          <span className="mr-4">Anthony</span>
+          <span className="mr-1 font-medium">ReakSmey</span>
+          <svg
+            width="14"
+            height="8"
+            viewBox="0 0 12 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0.397397 0.397397C0.729342 0.0654511 1.26753 0.0654511 1.59948 0.397397L5.99844 4.79636L10.3974 0.397397C10.7293 0.0654511 11.2675 0.0654511 11.5995 0.397397C11.9314 0.729342 11.9314 1.26753 11.5995 1.59948L6.59948 6.59948C6.26753 6.93142 5.72934 6.93142 5.3974 6.59948L0.397397 1.59948C0.0654511 1.26753 0.0654511 0.729342 0.397397 0.397397Z"
+              fill="#7C8DB5"
+            />
+          </svg>
         </div>
       </div>
     </header>

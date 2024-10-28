@@ -1,52 +1,54 @@
 import React from "react";
-import {
-  FaProjectDiagram,
-  FaChartBar,
-  FaDatabase,
-  FaQuestionCircle,
-} from "react-icons/fa";
+import GraphIcon from "@/public/images/header/graph.png";
+import VisualizeIcon from "@/public/images/header/diagram.png";
+import DatasetIcon from "@/public/images/header/home-hashtag.png";
+import HelpIcon from "@/public/images/header/messages-2.png";
+
+interface MenuItem {
+  name: string;
+  icon: string;
+  link: string;
+}
+
+const menuItems: MenuItem[] = [
+  {
+    name: "Project",
+    icon: GraphIcon,
+    link: "#",
+  },
+  {
+    name: "Visualize",
+    icon: VisualizeIcon,
+    link: "#",
+  },
+  {
+    name: "Dataset",
+    icon: DatasetIcon,
+    link: "#",
+  },
+  {
+    name: "Helps",
+    icon: HelpIcon,
+    link: "#",
+  },
+];
 
 const Sidebar: React.FC = () => {
   return (
-    <aside className="w-64 h-full bg-gray-800 text-white fixed left-0 top-0 p-4">
-      <nav className="mt-4">
+    <aside className="w-[120px] h-full bg-white shadow-md text-black fixed left-0 top-14 px-8">
+      <nav className="mt-8">
         <ul>
-          <li className="mb-4">
-            <a
-              href="#"
-              className="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded"
-            >
-              <FaProjectDiagram className="mr-3" />
-              Project
-            </a>
-          </li>
-          <li className="mb-4">
-            <a
-              href="#"
-              className="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded"
-            >
-              <FaChartBar className="mr-3" />
-              Visualize
-            </a>
-          </li>
-          <li className="mb-4">
-            <a
-              href="#"
-              className="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded"
-            >
-              <FaDatabase className="mr-3" />
-              Dataset
-            </a>
-          </li>
-          <li className="mb-4">
-            <a
-              href="#"
-              className="flex items-center p-2 text-gray-300 hover:bg-gray-700 rounded"
-            >
-              <FaQuestionCircle className="mr-3" />
-              Helps
-            </a>
-          </li>
+          {menuItems.map((item, index) => (
+            <li key={index} className="mb-6">
+              <a
+                href={item.link}
+                className="flex flex-col items-center p-2 text-black hover:text-blue-500 rounded"
+              >
+                <img src={item.icon} alt={item.name} width={30} height={30} />
+                <span className="mt-2 text-sm font-medium">{item.name}</span>
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>
