@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -65,7 +65,7 @@ export const Quick = () => {
 
         {/* DashboardCard Animation */}
         <motion.div
-          className="mt-8 lg:mt-0 lg:p-10 transform transition-transform duration-300 hover:scale-105"
+          className="sm:px-5 md:px-0 mt-8 lg:mt-0 lg:p-10 transform transition-transform duration-300 hover:scale-105"
           initial={{ opacity: 0, x: 100 }} // Slide in from the right
           whileInView={{ opacity: 1, x: 0 }} // Animate to full opacity and position
           transition={{ duration: 0.5, ease: "easeOut" }} // Smooth animation for DashboardCard

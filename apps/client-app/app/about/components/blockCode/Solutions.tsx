@@ -31,7 +31,7 @@ export const Solutions = () => {
       viewport={{ once: false, amount: 0.3 }} // Trigger the animation when 30% of the div is in view
     >
       <motion.div
-        className="flex-shrink-0 sm:w-1/2 sm:h-1/2 lg:pt-[3%] xl:pt-[6%] transform transition-transform duration-300 hover:scale-105"
+        className="hidden lg:block flex-shrink-0 sm:w-1/2 sm:h-1/2 lg:pt-[3%] xl:pt-[6%] transform transition-transform duration-300 hover:scale-105"
         initial={{ opacity: 0, x: -100 }} // Initial position (slide in from the left)
         whileInView={{ opacity: 1, x: 0 }} // Animate to full opacity and original position
         transition={{ duration: 0.5, ease: "easeOut" }} // Timing settings for image
@@ -47,7 +47,7 @@ export const Solutions = () => {
         />
       </motion.div>
       <motion.div
-        className="w-full lg:max-w-md mx-auto p-2 lg:p-4 text-white"
+        className="w-full lg:max-w-md mx-auto p-2 lg:p-8 text-white"
         initial={{ opacity: 0, y: 50 }} // Slide up from below
         whileInView={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }} // Delay the text slightly for a staggered effect

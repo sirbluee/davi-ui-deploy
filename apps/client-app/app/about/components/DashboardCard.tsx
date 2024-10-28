@@ -1,11 +1,73 @@
 import Image from "next/image";
-import { FC } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import man_image from "@/public/images/about/man.jpg";
 import user_image from "@/public/images/about/User.png";
 
 const DashboardCard: FC = () => {
+  const [plance, setPlance] = useState(0);
+  const [active, setActive] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [revenue, setRevenue] = useState(0);
+  const [percent, setPercent] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  // Function to animate the number count up
+  const animateNumber = (target: number, setValue: (value: number) => void) => {
+    let current = 0;
+    const increment = target / 100;
+
+    const interval = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setValue(target);
+        clearInterval(interval);
+      } else {
+        setValue(Math.floor(current));
+      }
+    }, 20);
+  };
+
+  // Intersection Observer to detect visibility
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const currentCardRef = cardRef.current; // Copy the ref value to a variable
+
+    if (currentCardRef) {
+      observer.observe(currentCardRef);
+    }
+
+    return () => {
+      if (currentCardRef) {
+        observer.unobserve(currentCardRef); // Use the copied variable in the cleanup
+      }
+    };
+  }, []);
+
+  // Start animation when the component becomes visible
+  useEffect(() => {
+    if (isVisible) {
+      animateNumber(254, setPlance);
+      animateNumber(3000, setActive);
+      animateNumber(3254, setTotal);
+      animateNumber(5960.99, setRevenue);
+      animateNumber(318, setPercent);
+    }
+  }, [isVisible]);
+
   return (
-    <div className="bg-gray-400 rounded-xl p-3 relative">
+    <div ref={cardRef} className="bg-gray-400 rounded-xl p-3 relative">
       {/* Background Circle */}
       <div
         className="absolute top-12 right-10 transform -translate-y-1/2 translate-x-1/2 w-40 h-40 rounded-full opacity-25"
@@ -23,27 +85,46 @@ const DashboardCard: FC = () => {
         {/* Top floating chart */}
         <div className="absolute top-[-45px] sm:top-[-50px] sm:left-[-60px] left-[-25px] bg-white rounded-lg shadow-md transform transition-transform duration-300 hover:scale-105 lg:hover:scale-125">
           <div className="w-32 h-auto rounded-md p-2">
-            <div className="space-y-5">
-              <div className="bg-blue-300 h-3 w-1/3 rounded-full"></div>
-              <div className="bg-purple-200 h-4 w-1/2 rounded-full"></div>
-              <div className="flex flex-row justify-between items-end">
-                <div className="bg-purple-200 h-8 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-6 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-12 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-7 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-6 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-12 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-7 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-12 w-1 rounded-full"></div>
-                <div className="bg-purple-200 h-7 w-1 rounded-full"></div>
-                <div className="bg-red-300 h-10 w-1 rounded-full"></div>
+            <div>
+              <div
+                className={`bg-blue-300 h-3 rounded-full transition-all duration-[2000ms] ease-in-out ${
+                  isVisible ? "w-1/3" : "w-0"
+                }`}
+              ></div>
+              <div
+                className={`bg-purple-200 mt-3 mb-0.5 h-4 rounded-full transition-all duration-[2000ms] ease-in-out ${
+                  isVisible ? "w-1/2" : "w-0"
+                }`}
+              ></div>
+              <div className="flex flex-row h-14 justify-between items-end">
+                {[
+                  { height: "h-8", color: "bg-purple-200" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-6", color: "bg-purple-200" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-12", color: "bg-purple-200" },
+                  { height: "h-7", color: "bg-purple-200" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-6", color: "bg-purple-200" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-12", color: "bg-purple-200" },
+                  { height: "h-7", color: "bg-purple-200" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-10", color: "bg-red-300" },
+                  { height: "h-12", color: "bg-purple-200" },
+                  { height: "h-7", color: "bg-purple-200" },
+                  { height: "h-10", color: "bg-red-300" },
+                ].map((bar, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      bar.color
+                    } w-1 rounded-full transition-all duration-[3500ms] ease-in-out transform origin-bottom ${
+                      isVisible ? bar.height : "h-0"
+                    }`}
+                  ></div>
+                ))}
               </div>
             </div>
           </div>
@@ -80,7 +161,7 @@ const DashboardCard: FC = () => {
                   <span className="text-sm text-gray-600">Plance</span>
                 </div>
                 <span className="text-lg font-semibold hover:text-blue-500">
-                  254
+                  {plance}
                 </span>
               </div>
               <div className="flex flex-col space-y-3">
@@ -89,7 +170,7 @@ const DashboardCard: FC = () => {
                   <span className="text-sm text-gray-600">Active</span>
                 </div>
                 <span className="text-lg font-semibold hover:text-blue-500">
-                  3000
+                  {active}
                 </span>
               </div>
               <div className="flex flex-col space-y-3">
@@ -98,7 +179,7 @@ const DashboardCard: FC = () => {
                   <span className="text-sm text-gray-600">Total</span>
                 </div>
                 <span className="text-lg font-semibold hover:text-blue-500">
-                  3254
+                  {total}
                 </span>
               </div>
             </div>
@@ -145,7 +226,7 @@ const DashboardCard: FC = () => {
                 Smey joined team development
               </div>
               <div className="text-xs text-gray-500">
-                22 April, 2025 | 04:00 PM
+                27 October, 2024 | 12:17 AM
               </div>
             </div>
           </div>
@@ -159,11 +240,11 @@ const DashboardCard: FC = () => {
               <div className="text-sm text-gray-500">Revenue</div>
               <div className="flex flex-row items-center">
                 <div className="text-xl font-bold flex hover:text-blue-500">
-                  $5960.99
+                  ${revenue.toFixed(2)}
                 </div>
                 <div className="text-[12px] text-green-500">
                   <span className="text-[10px] px-1">▲</span>
-                  <span>318%</span>
+                  <span>${percent}%</span>
                 </div>
               </div>
             </div>
