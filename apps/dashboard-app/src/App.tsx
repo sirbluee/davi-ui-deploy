@@ -1,5 +1,5 @@
-import { ClickCounter } from "./ClickCounter";
-import "./styles.css";
+import { ClickCounter } from "@/src/ClickCounter";
+import "@/src/styles.css";
 export const App = () => {
   return (
     <div>
