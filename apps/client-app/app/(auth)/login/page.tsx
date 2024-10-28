@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri";
+import { BiArrowBack } from "react-icons/bi"; 
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -28,11 +29,22 @@ export default function LoginPage() {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
+  const handleBack = () => {
+    router.push('/'); 
+  };
+
   return (
     <div className="min-h-screen flex">
       {/* Left Section - Form */}
       <div className="flex flex-col justify-center w-full sm:w-1/2 p-8 sm:p-12 lg:p-24 bg-white rounded-r-3xl">
         <div className="sm:max-w-md w-full mx-auto">
+          {/* back button */}
+          <button
+            onClick={handleBack}
+            className="mb-6 text-gray-600 hover:text-gray-800"
+          >
+            <BiArrowBack size={24} />
+          </button>
           <h2 className="text-3xl font-bold mb-4">LOGIN</h2>
           <p className="text-gray-600 mb-8">Welcome back!</p>
           <form className="space-y-6" onSubmit={handleSubmit}>

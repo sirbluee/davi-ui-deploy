@@ -18,6 +18,7 @@ import clean from "/public/images/services/clean.gif";
 import analysis from "/public/images/services/analysis.gif";
 import visualize from "/public/images/services/visualize.gif";
 import custom from "/public/images/services/custom.gif";
+import { useRouter } from "next/navigation";
 
 export default function Service() {
   const categories = [
@@ -29,6 +30,8 @@ export default function Service() {
     { id: "custom-visualizations", label: "Custom Visualizations" },
   ];
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const router = useRouter();
   const scrollRight = () => {
     // Using type assertion to tell TypeScript that the current value is not null
     const scrollContainer = scrollContainerRef.current as HTMLDivElement;
@@ -246,7 +249,7 @@ export default function Service() {
             on delivering quality ETL services and actionable insights, here's
             why DAVI is the best choice for your data transformation journey.`}
           </p>
-          <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
+          <button onClick={() => router.push('/signup')} className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition">
             Learn More
           </button>
         </div>
@@ -528,7 +531,7 @@ export default function Service() {
         )}
 
         {/* Data Visualization */}
-        {activeCategory === "custom-visualizations" && (
+        {activeCategory === "data-visualization" && (
           <div className="flex flex-col md:flex-row justify-between ">
             <div className="w-full md:w-1/2 px-6 text-left mb-8 md:mb-0">
               <h2 className="text-xl sm:text-2xl font-bold mb-4">
@@ -583,7 +586,7 @@ export default function Service() {
         )}
 
         {/* Data Visualization */}
-        {activeCategory === "data-visualization" && (
+        {activeCategory === "custom-visualizations" && (
           <div className="flex flex-col md:flex-row justify-between">
             <div className="w-full md:w-1/2 px-6 text-left mb-8 md:mb-0">
               <h2 className="text-xl sm:text-2xl font-bold mb-4">
