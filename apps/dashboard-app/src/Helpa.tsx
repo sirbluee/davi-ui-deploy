@@ -1,38 +1,138 @@
-import React from 'react';
+import React, { ChangeEvent, useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+
+const initContactForm = {
+    Username: "",
+    email: "",
+    comment: "",
+};
 
 const Helps: React.FC = () => {
+    const form = useRef<HTMLFormElement>(null);
+    const [user, setUser] = useState(initContactForm);
+    const [errors, setErrors] = useState({
+        email: "",
+        username: "",
+        comment: "",
+    });
+
+    const validateEmail = (email: string) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
+
+    const handleChanged = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setUser((prev) => ({ ...prev, [name]: value }));
+
+        // Clear error for the field being edited
+        setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        // Basic validation
+        let isValid = true;
+        const newErrors = { email: "", username: "", comment: "" };
+
+        if (!user.Username) {
+            newErrors.username = "Username is required.";
+            isValid = false;
+        }
+
+        if (!validateEmail(user.email)) {
+            newErrors.email = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        if (!user.comment) {
+            newErrors.comment = "Please tell us about your project.";
+            isValid = false;
+        }
+        setErrors(newErrors);
+
+        if (isValid) {
+            emailjs
+                .sendForm(
+                    "service_nzcvp3l",  // Update with your service ID
+                    "template_qmw2qlg",  // Update with your template ID
+                    form.current!,
+                    "hVvaUjpN8LnR1QX7o"  // Update with your public key
+                )
+                .then((result) => {
+                    console.log(result.text);
+                })
+                .catch((error) => {
+                    console.log(error.text);
+                });
+
+            console.log("Form submitted successfully: ", user);
+            setUser(initContactForm); // Reset form after successful submission
+        }
+    };
+
+    const isFormValid = user.Username && user.email && user.comment;
+
     return (
         <div className="flex h-screen">
             {/* Sidebar and Navbar should already be in the layout component */}
-            <div className="flex-grow bg-gray-50 p-6">
-                <h1 className="text-2xl font-semibold mb-4">Helps</h1>
-                
-                <div className="bg-white rounded-lg shadow-md p-6 max-w-3xl mx-auto">
+            <div className="flex-grow bg-gray-50 p-6 pt-[80px]"> 
+                <h1 className="text-3xl font-semibold mb-6 ml-[390px]">Helps</h1>
+
+                <div className="bg-white rounded-lg shadow-md p-6 max-w-[1098px] mx-auto">
                     <h2 className="text-xl font-semibold mb-4">Contact Us</h2>
 
-                    <form className="space-y-4">
+                    <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+                        {/* Username */}
+                        <div>
+                            <label className="block text-sm font-medium text-gray-700" htmlFor="Username">
+                                Username
+                            </label>
+                            <input
+                                type="text"
+                                name="Username"
+                                id="Username"
+                                value={user.Username}
+                                onChange={handleChanged}
+                                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                                placeholder="Enter username"
+                            />
+                            {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
+                        </div>
+
+                        {/* Email */}
                         <div>
                             <label className="block text-sm font-medium text-gray-700" htmlFor="email">
                                 Email
                             </label>
                             <input
                                 type="email"
+                                name="email"
                                 id="email"
+                                value={user.email}
+                                onChange={handleChanged}
                                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="Enter email"
                             />
+                            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                         </div>
 
+                        {/* Tell us about the problem */}
                         <div>
-                            <label className="block text-sm font-medium text-gray-700" htmlFor="problem">
-                                Tell Us About Problem
+                            <label className="block text-sm font-medium text-gray-700" htmlFor="comment">
+                                Tell Us About Your Problem
                             </label>
                             <textarea
-                                id="problem"
+                                name="comment"
+                                id="comment"
+                                value={user.comment}
+                                onChange={handleChanged}
                                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
                                 placeholder="Enter details to visualize and showcase your product information efficiently"
                                 rows={4}
                             />
+                            {errors.comment && <p className="text-red-500 text-sm">{errors.comment}</p>}
                         </div>
 
                         <p className="text-sm text-gray-500">
@@ -42,7 +142,10 @@ const Helps: React.FC = () => {
                         <div className="flex justify-end">
                             <button
                                 type="submit"
-                                className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+                                className={`px-6 py-2 rounded-lg text-white ${
+                                    isFormValid ? "bg-blue-600 hover:bg-blue-700" : "bg-gray-400 cursor-not-allowed"
+                                }`}
+                                disabled={!isFormValid} // Disable button if form is incomplete
                             >
                                 Send Message
                             </button>
