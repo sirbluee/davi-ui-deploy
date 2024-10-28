@@ -5,7 +5,7 @@ export const App = () => {
     <Layout>
       <div>
         {/* Content goes here */}
-        <h1 className="text-2xl font-bold">Welcome to the Dashboard</h1>
+        <h1 className="text-2xl font-bold">Welcome to my Team</h1>
       </div>
     </Layout>
   );
