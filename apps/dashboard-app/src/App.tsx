@@ -1,4 +1,3 @@
-// import { Button } from "ms-ui-components";
 import { ClickCounter } from "./ClickCounter";
 import "./styles.css";
 export const App = () => {
@@ -6,7 +5,6 @@ export const App = () => {
     <div>
       <h1>
         <ClickCounter />
-        {/* <Button label="Click O mk"/> */}
       </h1>
     </div>
   );
