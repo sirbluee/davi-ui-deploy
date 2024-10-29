@@ -1,4 +1,5 @@
 /node_modules
+_README.md
 yarn.lock
 .npmrc
 .yarnrc.yml
