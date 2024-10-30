@@ -134,7 +134,7 @@ const Header: React.FC = () => {
 
         {/* Profile Dropdown */}
         {isProfileDropdownOpen && (
-          <div className="absolute right-4 mt-[300px] w-80 bg-white shadow-lg rounded-sm z-10 p-4">
+          <div className="absolute right-4 mt-[290px] w-80 bg-white shadow-lg rounded-sm z-10 p-4">
             <div className="flex justify-between items-center pb-2 border-b">
               <div className="flex items-center">
                 <img
