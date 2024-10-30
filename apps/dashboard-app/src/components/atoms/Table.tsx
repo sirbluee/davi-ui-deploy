@@ -10,21 +10,27 @@ interface TableRowData {
 }
 
 interface DataTableProps {
-  headers: TableHeader[]; // Column headers
-  data: TableRowData[]; // Row data
-  showCheckbox?: boolean; // Control checkbox visibility
-  editable?: boolean; // Control cell editability
-  allowColumnSelection?: boolean; // Control if any column can be selected
-  selectableColumns?: string[]; // Control which columns can be selected
+  headers: TableHeader[];
+  data: TableRowData[];
+  showCheckbox?: boolean;
+  showIndex?: boolean;
+  editable?: boolean;
+  allowColumnSelection?: boolean;
+  selectableColumns?: string[] | "all";
+  firstRowHasChildren?: boolean;
+  childrenContent?: React.ReactNode;
 }
 
 const DataTable: React.FC<DataTableProps> = ({
   headers,
   data,
   showCheckbox = true,
+  showIndex = true,
   editable = true,
   allowColumnSelection = true,
   selectableColumns = [],
+  firstRowHasChildren = false,
+  childrenContent = null,
 }) => {
   const [rows, setRows] = useState(data);
   const [editCell, setEditCell] = useState<{ rowIndex: number; key: string } | null>(null);
@@ -32,8 +38,12 @@ const DataTable: React.FC<DataTableProps> = ({
   const [selectedColumns, setSelectedColumns] = useState<string[]>([]);
   const [allChecked, setAllChecked] = useState(false);
 
+  const isColumnSelectable = (key: string) => {
+    return selectableColumns === "all" || selectableColumns.includes(key);
+  };
+
   const handleColumnClick = (key: string) => {
-    if (allowColumnSelection && selectableColumns.includes(key)) {
+    if (allowColumnSelection && isColumnSelectable(key)) {
       setSelectedColumns((prevSelected) =>
         prevSelected.includes(key) ? prevSelected.filter((col) => col !== key) : [...prevSelected, key]
       );
@@ -81,96 +91,97 @@ const DataTable: React.FC<DataTableProps> = ({
 
   return (
     <div className="flex flex-col">
-      <div className="overflow-x-auto">
-        <div className="p-1.5 min-w-full inline-block align-middle">
-          <div className="overflow-hidden">
-            <table className="min-w-full border-collapse border-2 border-gray-300">
-              <thead className="border-2 border-gray-300">
-                <tr>
-                  <th className="px-6 py-4 bg-[#E6EDFF] text-left text-[22px] font-bold text-gray-500 uppercase tracking-wider border-2 border-gray-300">
-                    #
-                  </th>
-                  {showCheckbox && (
-                    <th className="px-6 py-4 bg-[#E6EDFF] border-2 border-gray-300">
+      {/* Setting max height and width with overflow to enable scrolling */}
+      <div className="overflow-auto" style={{ maxHeight: "500px", maxWidth: "100%" }}>
+        <table className="min-w-full border-collapse border-2 border-gray-300">
+          <thead className="border-2 border-gray-300 bg-[#E6EDFF]">
+            <tr>
+              {showCheckbox && (
+                <th className="px-6 py-4 border-2 border-gray-300 bg-[#E6EDFF]">
+                  <input
+                    type="checkbox"
+                    checked={allChecked}
+                    onChange={handleAllCheckboxChange}
+                    className="w-6 h-6 appearance-none border cursor-pointer border-gray-300 rounded-md checked:bg-indigo-500 checked:border-indigo-500 focus:ring-indigo-300 focus:ring-offset-2"
+                  />
+                </th>
+              )}
+              {showIndex && (
+                <th className="px-6 py-4 text-left text-[22px] font-bold text-gray-500 uppercase tracking-wider border-2 border-gray-300 bg-[#E6EDFF]">
+                  #
+                </th>
+              )}
+              {headers.map((header) => (
+                <th
+                  key={header.key}
+                  onClick={() => handleColumnClick(header.key)}
+                  className={`px-6 py-4 text-left text-[22px] font-bold text-gray-500 uppercase tracking-wider border-2 border-gray-300 bg-[#E6EDFF] ${
+                    selectedColumns.includes(header.key) ? "bg-blue-200" : ""
+                  } ${allowColumnSelection && isColumnSelectable(header.key) ? "cursor-pointer" : "cursor-default"}`}
+                >
+                  {header.label}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="bg-white divide-y divide-gray-200 border-2 border-gray-300">
+            {rows.map((row, rowIndex) => (
+              <React.Fragment key={rowIndex}>
+                <tr
+                  className={`transition duration-200 ${
+                    checkedItems[rowIndex] ? "bg-blue-200" : "hover:bg-gray-200"
+                  }`}
+                >
+                  {!(firstRowHasChildren && rowIndex === 0) && showCheckbox && (
+                    <td className="px-6 py-2 border-2 border-gray-300">
                       <input
+                        id={`checkbox-${rowIndex}`}
                         type="checkbox"
-                        checked={allChecked}
-                        onChange={handleAllCheckboxChange}
+                        checked={!!checkedItems[rowIndex]}
+                        onChange={() => handleCheckboxChange(rowIndex)}
                         className="w-6 h-6 appearance-none border cursor-pointer border-gray-300 rounded-md checked:bg-indigo-500 checked:border-indigo-500 focus:ring-indigo-300 focus:ring-offset-2"
                       />
-                    </th>
+                    </td>
                   )}
-                  {headers.map((header) => (
-                    <th
-                      key={header.key}
-                      onClick={() => handleColumnClick(header.key)}
-                      className={`px-6 py-4 text-left text-[22px] font-bold cursor-pointer text-gray-500 bg-[#E6EDFF] uppercase tracking-wider border-2 border-gray-300 ${
-                        selectedColumns.includes(header.key) ? "bg-blue-200" : ""
-                      } ${
-                        allowColumnSelection && selectableColumns.includes(header.key)
-                          ? "cursor-pointer"
-                          : "cursor-default"
-                      }`}
-                    >
-                      {header.label}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200 border-2 border-gray-300">
-                {rows.map((row, rowIndex) => (
-                  <tr
-                    key={rowIndex}
-                    className={`transition duration-200 ${
-                      checkedItems[rowIndex] ? "bg-blue-200" : "hover:bg-gray-200"
-                    }`}
-                  >
+                  {!(firstRowHasChildren && rowIndex === 0) && showIndex && (
                     <td className="px-6 py-2 text-[18px] font-semibold text-gray-700 border-2 border-gray-300">
                       {rowIndex + 1}
                     </td>
-                    {showCheckbox && (
-                      <td className="px-6 py-2 border-2 border-gray-300">
+                  )}
+                  {headers.map((header) => (
+                    <td
+                      key={header.key}
+                      className={`px-4 text-[18px] text-gray-900 cursor-pointer w-[300px] h-[45px] border-2 border-gray-300 ${
+                        selectedColumns.includes(header.key) ? "bg-gray-200" : ""
+                      } ${editCell?.rowIndex === rowIndex && editCell.key === header.key ? "text-indigo-500" : ""}`}
+                      onClick={() => handleCellClick(rowIndex, header.key)}
+                    >
+                      {firstRowHasChildren && rowIndex === 0 && childrenContent ? (
+                        <div className="flex items-center justify-center">{childrenContent}</div>
+                      ) : editable && editCell?.rowIndex === rowIndex && editCell.key === header.key ? (
                         <input
-                          id={`checkbox-${rowIndex}`}
-                          type="checkbox"
-                          checked={!!checkedItems[rowIndex]}
-                          onChange={() => handleCheckboxChange(rowIndex)}
-                          className="w-6 h-6 appearance-none border cursor-pointer border-gray-300 rounded-md checked:bg-indigo-500 checked:border-indigo-500 focus:ring-indigo-300 focus:ring-offset-2"
+                          type="text"
+                          value={row[header.key]}
+                          onChange={(e) => handleCellChange(e, rowIndex, header.key)}
+                          onBlur={handleSaveCell}
+                          onKeyDown={handleKeyDown}
+                          className="border rounded mx-1 p-2 border-none outline-none bg-transparent"
+                          autoFocus
                         />
-                      </td>
-                    )}
-                    {headers.map((header) => (
-                      <td
-                        key={header.key}
-                        className={`px-4 text-[18px] text-gray-900 cursor-pointer w-[300px] h-[45px] border-2 border-gray-300 ${
-                          selectedColumns.includes(header.key) ? "bg-gray-200" : ""
-                        } ${editCell?.rowIndex === rowIndex && editCell.key === header.key ? "text-indigo-500" : ""}`}
-                        onClick={() => handleCellClick(rowIndex, header.key)}
-                      >
-                        {editable && editCell?.rowIndex === rowIndex && editCell.key === header.key ? (
-                          <input
-                            type="text"
-                            value={row[header.key]}
-                            onChange={(e) => handleCellChange(e, rowIndex, header.key)}
-                            onBlur={handleSaveCell}
-                            onKeyDown={handleKeyDown}
-                            className="border rounded mx-1 p-2 border-none outline-none bg-transparent"
-                            autoFocus
-                          />
-                        ) : (
-                          row[header.key]
-                        )}
-                      </td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
+                      ) : (
+                        row[header.key]
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              </React.Fragment>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
 };
 
 export default DataTable;
+  
