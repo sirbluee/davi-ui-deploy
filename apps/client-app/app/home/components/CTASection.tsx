@@ -9,13 +9,12 @@ export default function CTASection() {
           <div className="flex z-50 flex-col items-center justify-center text-white py-16 space-y-8 bg-memey ">
             {/* Header */}
             <h2 className="text-3xl md:text-5xl font-bold text-center animate-fade-in">
-              Ready to get started?
+              Get in Touch Today!
             </h2>
 
             {/* Description */}
             <p className="text-xl md:text-2xl text-center max-w-2xl mx-auto">
-              We are so confident you will love DAVI, we have made our service
-              month-to-month.
+              Have questions? Our team is here to provide the answers you need.
             </p>
 
             {/* CTA Button */}
@@ -26,7 +25,7 @@ export default function CTASection() {
                      transition-colors hover:duration-150
                      transform hover:scale-105"
             >
-              Try DAVI Now
+              Contact Us
             </Link>
           </div>
         </div>

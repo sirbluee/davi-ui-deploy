@@ -47,8 +47,8 @@ export default function DataInsightSection() {
 
           {/* Text Section */}
           <div className="text-center md:text-left order-2 md:order-1">
-            <h2 className="text-2xl font-bold mb-4">
-              Unlock Powerful Data Insights Today
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              Unlock Powerful Data Insights with a<br /> 14-Day Free Trial
             </h2>
             <ul
               data-aos="flip-down"
