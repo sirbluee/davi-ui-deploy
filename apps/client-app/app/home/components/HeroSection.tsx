@@ -35,9 +35,9 @@ export default function HeroSection() {
 
           {/* Link wrapping span with AOS */}
           <Link href="/signup">
-            <span className="bg-[#443DFF] text-white text-sm font-bold py-3 px-8 rounded-lg hover:bg-blue-700">
+            <button className="mt-6 bg-[#443DFF] text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition">
               Request Demo
-            </span>
+            </button>
           </Link>
         </div>
       </section>
