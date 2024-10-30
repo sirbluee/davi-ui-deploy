@@ -20,13 +20,13 @@ export default function CTASection() {
 
             {/* CTA Button */}
             <Link
-              href="/demo"
+              href="/signup"
               className="flex mt-8 px-8 py-4 bg-blue-600 hover:bg-blue-700
                      text-white font-semibold rounded-lg 
                      transition-colors hover:duration-150
                      transform hover:scale-105"
             >
-              Request a Demo
+              Try DAVI Now
             </Link>
           </div>
         </div>
