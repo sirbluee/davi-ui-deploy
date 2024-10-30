@@ -13,6 +13,7 @@ export const App = () => {
         <h1 className="text-2xl font-bold">Welcome to my Team</h1>
         <h1>Hello, Welcome to rok rak team</h1>
         <TableTest/>
+        <Button children={"Next"}/>
       </div>
     </Layout>
   );
