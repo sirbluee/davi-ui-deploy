@@ -19,7 +19,7 @@ export default function CTASection() {
 
             {/* CTA Button */}
             <Link
-              href="/signup"
+              href="/contact"
               className="flex mt-8 px-8 py-4 bg-blue-600 hover:bg-blue-700
                      text-white font-semibold rounded-lg 
                      transition-colors hover:duration-150
