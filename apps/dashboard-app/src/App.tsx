@@ -1,6 +1,11 @@
 import TableTest from "./components/atoms/TableTest";
 import Layout from "./layout/MainLayout";
 import "./styles.css";
+import DisplayTable from "./components/DisplayTable";
+import ShowTable from "./components/ShowTable";
+import Button from "./components/atoms/Button";
+
+
 export const App = () => {
   return (
     <Layout>
