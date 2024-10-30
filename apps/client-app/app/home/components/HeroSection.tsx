@@ -33,7 +33,7 @@ export default function HeroSection() {
             <br /> decisions faster and smarter.
           </p>
 
-          {/* Link wrapping span with AOS */}
+          {/* Link wrapping span with AOS here*/}
           <Link href="/signup">
             <button className="mt-6 bg-[#443DFF] text-white font-semibold py-3 px-8 rounded-lg hover:opacity-90 transition">
               Request Demo
