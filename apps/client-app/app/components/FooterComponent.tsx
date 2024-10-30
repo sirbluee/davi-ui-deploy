@@ -13,13 +13,7 @@ import Link from "next/link";
 const Footer: React.FC = () => {
   return (
     <div
-      className="pt-10 bg-black text-white w-full"
-      style={{
-        backgroundImage: `url('/images/footer/bg-footer.png')`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="pt-16  bg-black text-white w-full "
     >
       {/* Main Footer Container with the same margins as navbar */}
       <div className="container mx-auto px-8 lg:px-36 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-8">
@@ -80,35 +74,38 @@ const Footer: React.FC = () => {
 
         {/* Services Section - Hidden on Mobile */}
         <div className="hidden sm:block text-left">
-          <h3 className="text-xl font-bold mb-3">Our Services</h3>
+          <h3 className="text-xl font-bold mb-3">Home</h3>
           <ul className="space-y-2 text-sm">
             <li className="pt-2">
-              <Link href="/service">ETL </Link>
+              <Link href="/service">Service </Link>
             </li>
             <li className="pt-2">
-              <Link href="/service">Data Visualization </Link>
+              <Link href="/service">Resource </Link>
             </li>
             <li className="pt-2">
-              <Link href="/service">Data Cleaning </Link>
+              <Link href="/service">Pricing</Link>
             </li>
-            <li className="pt-2">
+            {/* <li className="pt-2">
               <Link href="/service">Data Analyst </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
 
         {/* About Section - Hidden on Mobile */}
         <div className="hidden sm:block text-left">
-          <h3 className="text-xl font-bold mb-3">About</h3>
+          <h3 className="text-xl font-bold mb-3">Resource</h3>
           <ul className="space-y-2 text-sm">
             <li className="pt-2">
-              <Link href="/about">How it works </Link>
+              <Link href="/about">About </Link>
             </li>
             <li className="pt-2">
-              <Link href="/about">Member </Link>
+              <Link href="/about">Blog </Link>
             </li>
             <li className="pt-2">
-              <Link href="/about">Brainstorm </Link>
+              <Link href="/about">Docs </Link>
+            </li>
+            <li className="pt-2">
+              <Link href="/contact">Contact </Link>
             </li>
           </ul>
         </div>
@@ -142,7 +139,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-600 mt-8 mx-8 lg:mx-36"></div>
+      <div className="border-t border-gray-600  mx-8 lg:mx-36"></div>
       <div className="text-center py-6 text-sm">
         <p>Copyright © 2024 DAVI. All rights reserved.</p>
       </div>
