@@ -31,7 +31,7 @@ const Header: React.FC = () => {
     setIsProfileDropdownOpen(false);
   };
   return (
-    <header className="bg-white shadow-md flex items-center justify-between p-4 px-8 relative">
+    <header className="bg-white shadow-md flex items-center justify-between py-3 px-8 fixed top-0 left-0 w-full z-50">
       <div className="flex items-center cursor-pointer">
         <a href="/">
           <img src={Logo} alt="Logo" className="h-8 w-auto mr-4" />
@@ -134,7 +134,7 @@ const Header: React.FC = () => {
 
         {/* Profile Dropdown */}
         {isProfileDropdownOpen && (
-          <div className="absolute right-4 mt-[300px] w-80 bg-white shadow-lg rounded-md z-10 p-4">
+          <div className="absolute right-4 mt-[290px] w-80 bg-white shadow-lg rounded-sm z-10 p-4">
             <div className="flex justify-between items-center pb-2 border-b">
               <div className="flex items-center">
                 <img
@@ -152,11 +152,11 @@ const Header: React.FC = () => {
               </button>
             </div>
             <div className="mt-4">
-              <button className="w-full flex items-center p-2 hover:bg-gray-100 rounded-md space-x-3">
+              <button className="w-full flex items-center p-3 hover:bg-gray-100 rounded-sm space-x-3">
                 <FiUser size={22} />
                 <span>My Profile</span>
               </button>
-              <button className="w-full flex items-center p-2 text-red-500 hover:bg-gray-100 rounded-md mt-2 space-x-3">
+              <button className="w-full flex items-center p-3 text-red-500 hover:bg-gray-100 rounded-sm mt-2 space-x-3">
                 <AiOutlineLogout size={22} />
                 <span>Log Out</span>
               </button>
