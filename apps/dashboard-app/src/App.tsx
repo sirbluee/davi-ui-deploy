@@ -1,5 +1,5 @@
 import Layout from "@/src/components/organisms/layout/MainLayout";
-import "@/src/styles.css";
+import "./styles.css";
 import Button from "./components/atoms/Button";
 import { InputTest } from "./components/atoms/Input";
 import {
