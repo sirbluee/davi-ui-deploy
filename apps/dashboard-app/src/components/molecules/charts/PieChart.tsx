@@ -1,26 +1,52 @@
+import React from "react";
 import ApexCharts from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
-export const PieChart = () => {
+// Define the data structure for each data item
+interface DataItem {
+  category: string;
+}
+
+// Define the prop types for PieChart, including the show_category prop
+interface PieChartProps {
+  data: DataItem[];
+  show_category?: boolean; // Optional prop to enable/disable categories
+}
+
+export const PieChart: React.FC<PieChartProps> = ({
+  data,
+  show_category = false,
+}) => {
+  // Count occurrences for each category
+  const categoryCounts = data.reduce<Record<string, number>>((acc, item) => {
+    acc[item.category] = (acc[item.category] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Extract labels and series data for the pie chart
+  const labels = Object.keys(categoryCounts);
+  const series = Object.values(categoryCounts);
+
+  // Chart options
   const chartOptions: ApexOptions = {
-    colors: ["#1C64F2", "#16BDCA", "#9061F9"],
+    // colors: ["#1C64F2", "#16BDCA", "#9061F9", "#F97316", "#10B981", "#F97346"],
     chart: {
+      type: "pie",
       height: 420,
       width: "100%",
-      type: "pie",
     },
     stroke: {
       colors: ["white"],
     },
     plotOptions: {
       pie: {
-        customScale: 1, // Use customScale to adjust the size of the pie chart
+        customScale: 1,
         dataLabels: {
           offset: -25,
         },
       },
     },
-    labels: ["Direct", "Organic search", "Referrals"], // Moved labels to the top level
+    labels,
     dataLabels: {
       enabled: true,
       style: {
@@ -28,13 +54,11 @@ export const PieChart = () => {
       },
     },
     legend: {
+      show: show_category, // Show or hide legend based on show_category prop
       position: "bottom",
       fontFamily: "Inter, sans-serif",
     },
   };
-
-  //! Mock Data
-  const series = [52.8, 26.8, 20.4];
 
   return (
     <div>
@@ -42,7 +66,7 @@ export const PieChart = () => {
         options={chartOptions}
         series={series}
         type="pie"
-        height={420}
+        height={350}
       />
     </div>
   );

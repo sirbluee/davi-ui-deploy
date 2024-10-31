@@ -1,37 +1,53 @@
 import React from "react";
 import Chart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
 
-export const LineChart = () => {
-  const chartOptions = {
+// Define the data structure for each data item
+interface DataItem {
+  month: string;
+  [key: string]: number | string;
+}
+
+// Define the prop types for LineChart
+interface LineChartProps {
+  data: DataItem[];
+  show_category?: boolean;
+}
+
+export const LineChart: React.FC<LineChartProps> = ({
+  data,
+  show_category = false,
+}) => {
+  // Extracting months for the x-axis
+  const months = data.map((item) => item.month);
+
+  // Extracting unique categories from the first data item, excluding "month"
+  const categories = Object.keys(data[0]).filter((key) => key !== "month");
+
+  // Creating series data for each category
+  const chartSeries = categories.map((category) => ({
+    name: category,
+    data: data.map((item) => item[category] as number),
+  }));
+
+  // Chart options with type definition
+  const chartOptions: ApexOptions = {
     chart: {
-      type: "line" as const, // Explicitly specifying 'as const' for the chart type
+      type: "line",
       toolbar: {
         show: false,
       },
     },
     stroke: {
-      curve: "straight" as const, // Set curve to a specific allowed value
-      width: 2, // Thickness of the lines
+      curve: "straight",
+      width: 2,
     },
     xaxis: {
-      categories: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-      ], // Example categories for the x-axis
+      categories: months, // Dynamically generated months
     },
-    colors: ["#FF0000", "#0000FF", "#00FF00", "#FFFF00"], // Updated colors: red, blue, green, yellow
+    colors: ["#FF0000", "#0000FF", "#00FF00", "#FFFF00", "#FF00FF"], // Colors for each category
     dataLabels: {
-      enabled: false, // Disable data labels for a cleaner look
+      enabled: false,
     },
     grid: {
       borderColor: "#e7e7e7",
@@ -39,26 +55,12 @@ export const LineChart = () => {
     tooltip: {
       enabled: true,
     },
+    legend: {
+      show: show_category, // Show or hide legend based on show_category prop
+      position: "bottom",
+      fontFamily: "Inter, sans-serif",
+    },
   };
-
-  const chartSeries = [
-    {
-      name: "Series 1",
-      data: [10, 40, 30, 60, 90, 70, 80, 100, 110, 130, 150, 160],
-    },
-    {
-      name: "Series 2",
-      data: [20, 30, 50, 80, 70, 60, 90, 120, 140, 130, 160, 180],
-    },
-    {
-      name: "Series 3",
-      data: [30, 20, 60, 70, 50, 90, 110, 130, 120, 150, 170, 200],
-    },
-    {
-      name: "Series 4",
-      data: [40, 50, 70, 90, 100, 110, 130, 140, 150, 170, 190, 210],
-    },
-  ];
 
   return (
     <div>
