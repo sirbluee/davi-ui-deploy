@@ -96,7 +96,7 @@ const Table: React.FC<ITableProps> = ({
           <thead className="border-2 border-gray-300 bg-[#E6EDFF]">
             <tr>
               {showIndex && (
-                <th className="flex px-6 py-4 text-left text-[22px] justify-center items-center font-bold text-gray-500 uppercase tracking-wider border-1 border-gray-300 bg-[#E6EDFF]">
+                <th className="flex px-6 py-4 text-left text-[20px] justify-center items-center font-bold text-gray-500 uppercase tracking-wider border-1 border-gray-300 bg-[#E6EDFF]">
                   #
                 </th>
               )}
@@ -104,7 +104,7 @@ const Table: React.FC<ITableProps> = ({
                 <th
                   key={header.key}
                   onClick={() => handleColumnClick(header.key)}
-                  className={`px-6 py-4 text-left text-[22px] font-bold text-gray-500 uppercase tracking-wider border-2 border-gray-300 bg-[#E6EDFF] ${
+                  className={`px-4 py-3 text-left text-[15px] font-bold text-gray-500 uppercase tracking-wider border-2 border-gray-300 bg-[#E6EDFF] ${
                     selectedColumns.includes(header.key) ? "bg-blue-200" : ""
                   } ${allowColumnSelection && isColumnSelectable(header.key) ? "cursor-pointer" : "cursor-default"}`}
                 >

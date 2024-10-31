@@ -1,21 +1,20 @@
-import Layout from "./layout/MainLayout";
+import Layout from "@/src/components/organisms/layout/MainLayout";
 import "./styles.css";
 import Button from "./components/atoms/Button";
-import Zhileang from "@/src/components/Templates/Zhileang";
+import SelectedTable from "./components/Templates/SelectedTable";
 export const App = () => {
   return (
     <Layout>
       <div className="ml-[110px]">
         {/* Content goes here */}
         {/* <h1 className="text-2xl font-bold">Welcome to my Team</h1> */}
-        <Zhileang />
-        <div className="flex justify-end mx-5 mt-5">
+        <SelectedTable />
+        <div className="flex justify-end mx-5">
           <Button
             children="Next"
             radius="large"
             size="medium"
-            variant="solid"
-            color="primary"
+            color="secondary"
           />
         </div>
       </div>

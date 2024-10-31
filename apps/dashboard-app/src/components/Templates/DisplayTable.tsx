@@ -1,30 +1,30 @@
 import React from "react";
 import BookIcon from "@/public/images/Book-icon.png";
-interface ListItem {
+interface ListTable {
   id: number;
-  items: string;
+  table: string;
 }
 
 interface Props {
-  listItem: ListItem[];
-  setSelectedItem: (item: ListItem) => void;
+  listTable: ListTable[];
+  setSelectedTable: (item: ListTable) => void;
 }
 
-const DisplayTable: React.FC<Props> = ({ listItem, setSelectedItem }) => {
+const DisplayTable: React.FC<Props> = ({ listTable, setSelectedTable }) => {
   return (
-    <div className="container w-[20%] h-[700px] space-y-2 border border-[#C4C1D8] rounded-lg">
-      <header className="ml-10 py-3 font-medium text-[20px]">
+    <div className="container w-[15%] h-[730px] space-y-2 border border-[#C4C1D8] rounded-lg">
+      <header className="text-start py-5 font-medium text-[20px] flex justify-start ml-5">
         Display Table
       </header>
-      <ul className="space-y-3 font-medium text-[14px] ml-10">
-        {listItem.map((item) => (
+      <ul className="space-y-3 font-medium text-[14px] ml-5">
+        {listTable.map((item) => (
           <div
-            className="flex justify-start items-start cursor-pointer text-center"
+            className="flex justify-start cursor-pointer"
             key={item.id}
-            onClick={() => setSelectedItem(item)}
+            onClick={() => setSelectedTable(item)}
           >
             <img src={BookIcon} alt="" width={24} />
-            <p className="ml-2">{item.items}</p>
+            <p className="ml-2">{item.table}</p>
           </div>
         ))}
       </ul>
