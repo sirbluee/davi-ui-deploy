@@ -1,8 +1,5 @@
-import TableTest from "@/src/components/atoms/TableTest";
 import Layout from "@/src/components/organisms/layout/MainLayout";
 import "@/src/styles.css";
-import Button from "./components/atoms/Button";
-import { InputTest } from "./components/atoms/Input";
 import CleaningPage from "./components/pages/CleaningPage";
 import { Chart } from "./components/templates/Chart";
 
