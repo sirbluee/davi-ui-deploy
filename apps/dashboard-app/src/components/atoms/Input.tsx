@@ -15,7 +15,7 @@ export interface InputProps {
     | "warning"
     | "danger";
   variant?: "flat" | "bordered" | "underlined" | "faded";
-  radius?: "none" | "sm" | "md" | "lg" | "full";
+  radius?: "none" | "sm" | "md" | "lg"|"2xl" | "full";
   labelPlacement?: "inside" | "outside" | "outside-left";
   isDisabled?: boolean;
   isReadOnly?: boolean;
@@ -41,7 +41,7 @@ const Input: FC<InputProps> = ({
   description = "",
   ...props
 }) => {
-  const baseStyles = "px-4 py-2 w-full outline-none";
+  const baseStyles = "px-4 py-3 w-full outline-none";
   const sizeClasses = {
     sm: "text-sm",
     md: "text-base",
@@ -66,6 +66,7 @@ const Input: FC<InputProps> = ({
     sm: "rounded-sm",
     md: "rounded-md",
     lg: "rounded-lg",
+    "2xl": "rounded-[14px]",
     full: "rounded-full",
   };
 
