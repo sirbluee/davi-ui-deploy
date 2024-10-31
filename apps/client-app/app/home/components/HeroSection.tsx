@@ -7,7 +7,7 @@ export default function HeroSection() {
     <>
       {/* Hero Section */}
       <section
-        className="relative text-white text-left h-screen flex items-center justify-center"
+        className="relative text-white text-left h-[730px] flex items-center justify-center"
         style={{
           backgroundImage: `url('/images/home/hero.png')`,
           backgroundSize: "cover",
@@ -22,12 +22,11 @@ export default function HeroSection() {
         {/* Hero Text and Content */}
         <div className="container mx-auto px-8 lg:px-36 relative z-10 flex flex-col items-start justify-center h-full">
           <h1
-            className="text-5xl font-bold mt-14 mb-4 leading-[56px]"
+            className="text-[72px] font-bold mt-14 mb-4 leading-[74px]"
           >
-            Unlock the
-            <br /> Full Potential
-            <br /> of Your Data
-            <br /> with{" "}
+            Unlock the Full
+            <br />  Potential of Your 
+            <br /> with Data{" "}
             <span className="text-[#407BFF] font-bold-900">DAVI</span>
           </h1>
           <p
