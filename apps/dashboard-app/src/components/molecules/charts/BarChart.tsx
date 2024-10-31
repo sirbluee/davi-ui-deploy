@@ -47,7 +47,6 @@ export const BarChart: React.FC<BarChartProps> = ({
       },
       animations: {
         enabled: true,
-        easing: "easeinout", // Type-safe assignment for easing
         speed: 800,
       },
     },
