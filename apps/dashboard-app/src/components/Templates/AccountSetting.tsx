@@ -3,13 +3,13 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 const AccountSettings: React.FC = () => {
   return (
-    <div id="account_setting" className="p-7 bg-gray-50 min-h-screen w-[1000px]">
+    <div className="p-7 bg-white min-h-screen w-[980px]">
       <h2 className="text-xl font-semibold text-gray-800 mb-6">
         Account Setting
       </h2>
 
       {/* Profile Details Section */}
-      <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-6 border-2 border-gray-200">
+      <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-9 border-2 border-gray-200">
         <div className="flex justify-between items-center mb-4 px-5">
           <h3 className="text-lg font-medium text-gray-700">Profile Details</h3>
           <button className="bg-[#443DFF] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition">
@@ -43,7 +43,7 @@ const AccountSettings: React.FC = () => {
       </div>
 
       {/* Email Section */}
-      <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-6 border-2 border-gray-200">
+      <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-9 border-2 border-gray-200">
         <h3 className="text-lg font-medium text-gray-700 mb-2 px-5">Email</h3>
         <div className="bg-white px-5 py-4 border-t-2 rounded-br-lg rounded-bl-lg border-gray-200">
           <p className="text-gray-800 mb-1">KImkim@gmail.com</p>
@@ -54,7 +54,7 @@ const AccountSettings: React.FC = () => {
       </div>
 
       {/* Login Management Section */}
-      <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-6 border-2 border-gray-200">
+      <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-9 border-2 border-gray-200">
         <div className="flex justify-between items-center mb-2 px-5">
           <h3 className="text-lg font-medium text-gray-700">
             Login Management

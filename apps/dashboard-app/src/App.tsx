@@ -12,6 +12,7 @@ import Visualize from "./components/pages/Visualize";
 import Dataset from "./components/pages/Dataset";
 import Project from "./components/pages/Project";
 import Helps from "./components/pages/Helps";
+import AccountSettings from "./components/templates/AccountSetting";
 
 export const App = () => {
   return (
@@ -22,10 +23,10 @@ export const App = () => {
           <Route path="/visualize" element={<Visualize />} />
           <Route path="/dataset" element={<Dataset />} />
           <Route path="/helps" element={<Helps />} />
+          <Route path="/accountsetting" element={<AccountSettings />} />
         </Routes>
       </Layout>
     </BrowserRouter>
   );
 };
 export default App;
-
