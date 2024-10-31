@@ -8,12 +8,12 @@ export default function CTASection() {
         <div className="relative scroll-parallax ">
           <div className="flex z-50 flex-col items-center justify-center text-white py-16 space-y-8 bg-memey ">
             {/* Header */}
-            <h2 className="text-3xl md:text-5xl font-bold text-center animate-fade-in">
+            <h2 className="text-3xl md:text-4xl font-bold text-center animate-fade-in">
               {"Let’s Get You Started, Your Way!"}
             </h2>
 
-            {/* Description */}
-            <p className="text-gray-300 text-lg md:text-xl text-center max-w-2xl mx-auto">
+            {/* Description here*/}
+            <p className="text-gray-300 text-sm md:text-base text-center max-w-2xl mx-auto">
               Have questions? Our team is here to provide the answers you need.
             </p>
 

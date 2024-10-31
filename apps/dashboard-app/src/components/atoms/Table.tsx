@@ -91,7 +91,7 @@ const Table: React.FC<ITableProps> = ({
 
   return (
     <div className="flex flex-col">
-      <div className="overflow-auto" style={{ maxHeight: "750px", maxWidth: "100%" }}>
+      <div className="overflow-auto" style={{ maxHeight: "890px", maxWidth: "100%" }}>
         <table className="min-w-full border-collapse border-2 border-gray-300">
           <thead className="border-2 border-gray-300 bg-[#E6EDFF]">
             <tr>
