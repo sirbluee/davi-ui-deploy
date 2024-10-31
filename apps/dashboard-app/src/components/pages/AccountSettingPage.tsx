@@ -11,7 +11,7 @@ const AccountSettingPage: React.FC = () => {
         Account Setting
       </h2>
 
-      {/* Profile Details Section */}
+      {/* Profile Details Section here*/}
       <div className="bg-gray-50 shadow-sm rounded-lg pt-3 mb-6 border-2 border-gray-200">
         <div className="flex justify-between items-center mb-4 px-5">
           <h3 className="text-lg font-medium text-gray-700">Profile Details</h3>
