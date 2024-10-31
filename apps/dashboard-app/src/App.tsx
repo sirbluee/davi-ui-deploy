@@ -7,8 +7,6 @@ export const App = () => {
     <Layout>
       <div className="ml-[110px]">
         <CleaningPage />
-        {/* <TableTest/>
-        <Button children={"Next"} size="medium" radius="2xl" isLoading={false} color="outline" isIconOnly={false}/> */}
       </div>
     </Layout>
   );
