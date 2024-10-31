@@ -12,7 +12,7 @@ export default function CTASection() {
               {"Let’s Get You Started, Your Way!"}
             </h2>
 
-            {/* Description */}
+            {/* Description here*/}
             <p className="text-gray-300 text-sm md:text-base text-center max-w-2xl mx-auto">
               Have questions? Our team is here to provide the answers you need.
             </p>
