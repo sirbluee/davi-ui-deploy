@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 interface MenuItem {
   name: string;
   icon: React.ReactNode;
@@ -148,24 +148,23 @@ const menuItems: MenuItem[] = [
 ];
 
 const Sidebar: React.FC = () => {
-  const [activeItem, setActiveItem] = useState<string>("Project");
-
   return (
     <aside className="w-[120px] h-full bg-white shadow-md text-currentColor fixed left-0 top-14 px-8">
       <nav className="mt-8">
         <ul>
           {menuItems.map((item, index) => (
             <li key={index} className="mb-6">
-              <Link
+              <NavLink
                 to={item.link}
-                onClick={() => setActiveItem(item.name)}
-                className={`flex flex-col items-center p-2 rounded transition-colors duration-300 ${
-                  activeItem === item.name ? "text-[#443DFF]" : "text-black hover:text-[#443DFF]"
-                }`}
+                className={({ isActive }) =>
+                  `flex flex-col items-center p-2 rounded transition-colors duration-300 ${
+                    isActive ? "text-[#443DFF]" : "text-black hover:text-[#443DFF]"
+                  }`
+                }
               >
                 {item.icon}
                 <span className="mt-2 text-sm font-medium">{item.name}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
