@@ -1,18 +1,12 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  DatasetIcon,
-  GraphIcon,
-  HelpIcon,
-  ProjectIcon,
-} from "@/src/components/atoms/icons/Icon";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { DatasetIcon, GraphIcon, HelpIcon, ProjectIcon } from "../atoms/icons/Icon";
+
 interface MenuItem {
   name: string;
   icon: React.ReactNode;
   link: string;
 }
-
-// Define the SVG icons as React components
 
 // Update menuItems to include SVG components
 const menuItems: MenuItem[] = [
@@ -39,26 +33,25 @@ const menuItems: MenuItem[] = [
 ];
 
 const Sidebar: React.FC = () => {
-  const [activeItem, setActiveItem] = useState<string>("Project");
-
   return (
     <aside className="w-[120px] h-full bg-white shadow-md text-currentColor fixed left-0 top-14 px-8">
       <nav className="mt-8">
         <ul>
           {menuItems.map((item, index) => (
             <li key={index} className="mb-6">
-              <Link
+              <NavLink
                 to={item.link}
-                onClick={() => setActiveItem(item.name)}
-                className={`flex flex-col items-center p-2 rounded transition-colors duration-300 ${
-                  activeItem === item.name
-                    ? "text-[#443DFF]"
-                    : "text-black hover:text-[#443DFF]"
-                }`}
+                className={({ isActive }) =>
+                  `flex flex-col items-center p-2 rounded transition-colors duration-300 ${
+                    isActive
+                      ? "text-[#443DFF]"
+                      : "text-black hover:text-[#443DFF]"
+                  }`
+                }
               >
                 {item.icon}
                 <span className="mt-2 text-sm font-medium">{item.name}</span>
-              </Link>
+              </NavLink>
             </li>
           ))}
         </ul>
