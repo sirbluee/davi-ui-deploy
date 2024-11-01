@@ -7,7 +7,7 @@ export default function HeroSection() {
     <>
       {/* Hero Section */}
       <section
-        className="relative text-white text-left h-screen flex items-center justify-center"
+        className="relative text-white text-left h-[730px] flex items-center justify-center"
         style={{
           backgroundImage: `url('/images/home/hero.png')`,
           backgroundSize: "cover",
