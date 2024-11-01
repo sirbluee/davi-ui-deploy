@@ -3,7 +3,7 @@ import { AiOutlineLogout } from "react-icons/ai";
 
 const AccountSettings: React.FC = () => {
   return (
-    <div className="p-7 bg-white min-h-screen w-full">
+    <div className="p-8 ml-4 bg-white min-h-screen w-full">
       <h2 className="text-xl font-semibold text-gray-800 mb-6">
         Account Setting
       </h2>
