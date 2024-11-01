@@ -18,7 +18,7 @@ const ResourcePage = () => {
             <Sidebar onSelect={setSection} selectedSection={section} />
           </div>
 
-          {/* Main content area with 100% width on mobile, 70% width on desktop */}
+          {/* Main content area with 100% width on mobile, 70% width on desktop screen*/}
           <div className="w-full md:w-2/3 px-6 lg:pr-40 lg:pl-8">
             <Content section={section} />
           </div>
