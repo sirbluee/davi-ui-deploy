@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import HomePage from "./home/Home";
 
+
 export const metadata: Metadata = {
   title: "DAVI | Home",
   description:

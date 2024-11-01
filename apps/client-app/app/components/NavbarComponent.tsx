@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Logo from "@/public/images/navBar/logo.png";
 import Link from "next/link";
-import { MenuList } from "./menu";
+import { MenuList, MenuListPhone } from "./menu";
 import { usePathname } from "next/navigation";
 
 export default function NavbarComponent() {
@@ -30,7 +30,7 @@ export default function NavbarComponent() {
   return (
     <nav
       className={`text-white fixed top-0 left-0 w-full z-20 transition-all duration-300 ${
-        navBg ? "bg-[#202A79] shadow-lg" : "bg-transparent"
+        navBg ? "bg-[#202A79] shadow-lg" : "bg-[#202A79]"
       }`}
     >
       <div className="container mx-auto px-8 lg:px-36 flex justify-between items-center py-4">
@@ -78,11 +78,6 @@ export default function NavbarComponent() {
             className="text-white hover:text-gray-200 font-medium"
           >
             Sign Up
-          </Link>
-          <Link href="/signup">
-            <span className="bg-blue-600 text-white text-base font-bold px-4 py-3 rounded-md hover:bg-blue-700">
-              Get Started
-            </span>
           </Link>
         </div>
         {/* Hamburger Menu for Mobile */}
@@ -136,53 +131,16 @@ export default function NavbarComponent() {
           </svg>
         </button>
         <div className="flex flex-col items-start space-y-6 mt-10 p-6">
-          <Link
-            href="/"
-            className="text-white hover:text-gray-200 font-medium"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            href="/service"
-            className="text-white hover:text-gray-200 font-medium"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Service
-          </Link>
-          <Link
-            href="/about"
-            className="text-white hover:text-gray-200 font-medium"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="text-white hover:text-gray-200 font-medium"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Contact
-          </Link>
-          <Link
-            href="/login"
-            className="text-white hover:text-gray-200 font-medium"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Login
-          </Link>
-          <Link
-            href="/signup"
-            className="text-white hover:text-gray-200 font-medium"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Sign Up
-          </Link>
-          <Link href="/signup" onClick={() => setIsMenuOpen(false)}>
-            <span className="bg-blue-600 text-white text-base font-bold py-2 px-4 rounded-lg hover:bg-blue-700">
-              Get Started
-            </span>
-          </Link>
+          {MenuListPhone.map((item, index) => (
+            <Link
+              key={index}
+              href={item.path}
+              className="text-white hover:text-gray-200 font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
