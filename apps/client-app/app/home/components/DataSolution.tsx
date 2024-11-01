@@ -81,9 +81,7 @@ export default function DataSolution() {
       onMouseLeave={() => setIsHovered(false)} // Resume auto-rotate on leave
     >
       <div className="container mx-auto px-4 sm:px-8 lg:px-36 text-center">
-        <h2
-          className="text-xl md:text-2xl font-bold mb-4 md:mb-8"
-        >
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-8">
           Data Solutions for Every Role in Your Organization
         </h2>
 
@@ -143,6 +141,7 @@ export default function DataSolution() {
               src={Data[activeTab].img}
               alt={Data[activeTab].title}
               sizes="(max-width: 768px) 100vw, 600px"
+              className="object-cover"
               priority
             />
           </div>
