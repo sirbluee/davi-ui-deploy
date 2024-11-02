@@ -1,5 +1,5 @@
-src/
 node_modules/
+_README.md
 build/
 .DS_Store
 *storybook.log
